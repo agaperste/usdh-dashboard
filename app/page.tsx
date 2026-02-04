@@ -187,6 +187,10 @@ export default function Dashboard() {
           grouped[dateKey][key] = projectTVLs[key]
         }
       })
+      // Calculate total TVL across all projects
+      grouped[dateKey].total_tvl = Object.keys(grouped[dateKey])
+        .filter(key => key !== 'date' && key !== 'sortDate' && key.endsWith('_tvl'))
+        .reduce((sum, key) => sum + (grouped[dateKey][key] || 0), 0)
     })
 
     const sortedData = Object.values(grouped)
@@ -414,10 +418,18 @@ export default function Dashboard() {
   return (
     <div className="container">
       <header>
-        <h1>USDH Ecosystem Usage</h1>
-        <p className="subtitle">
-          Tracking USDH activity across HyperEVM and HyperCore in terms of lending, spot trading, and perps
-        </p>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+          <div>
+            <h1>USDH Ecosystem Usage</h1>
+            <p className="subtitle">
+              Tracking USDH activity across HyperEVM and HyperCore in terms of lending, spot trading, and perps
+            </p>
+          </div>
+          <div style={{ textAlign: 'right', paddingTop: '0.5rem' }}>
+            <p style={{ fontSize: '0.85rem', color: '#666', margin: 0 }}>Powered by</p>
+            <p style={{ fontSize: '1.2rem', fontWeight: 600, color: '#1a1a1a', margin: 0 }}>Allium</p>
+          </div>
+        </div>
 
         {/* Table of Contents */}
         <div style={{
@@ -431,7 +443,7 @@ export default function Dashboard() {
           <p style={{ fontSize: '1rem', color: '#666', marginBottom: '1rem' }}>
             This dashboard provides comprehensive analytics on USDH stablecoin usage across multiple protocols and chains:
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.5rem' }}>
             <div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#10b981' }}>💰 Lending</h3>
               <p style={{ fontSize: '0.9rem', color: '#666', lineHeight: 1.6 }}>
@@ -450,12 +462,11 @@ export default function Dashboard() {
                 Analyze USDH perpetual trading on HyperCore (Hyperliquid) across protocols (Felix, Kinetiq) and assets (SILVER, GOLD, S&P 500, etc.)
               </p>
             </div>
-            <div>
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#ef4444' }}>👥 Users</h3>
-              <p style={{ fontSize: '0.9rem', color: '#666', lineHeight: 1.6 }}>
-                User activity and growth metrics using wallet addresses as a proxy for users
-              </p>
-            </div>
+          </div>
+          <div style={{ marginTop: '1rem', padding: '0.75rem', backgroundColor: '#ffffff', borderRadius: '6px', border: '1px solid #e0e0e0' }}>
+            <p style={{ fontSize: '0.85rem', color: '#666', margin: 0 }}>
+              <strong>Additional Analytics:</strong> Top projects by TVL/volume, user activity breakdown, and daily active users trends
+            </p>
           </div>
         </div>
 
@@ -641,17 +652,18 @@ export default function Dashboard() {
             <div className="chart-container">
               {lendingTVLData.length > 0 ? (
                 <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={lendingTVLData} margin={{ left: 20 }}>
+                  <ComposedChart data={lendingTVLData} margin={{ left: 20 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="displayDate" angle={-45} textAnchor="end" height={80} />
                     <YAxis tickFormatter={formatCurrency} />
                     <Tooltip formatter={(value: number) => formatCurrency(value)} />
                     <Legend />
-                    <Line type="monotone" dataKey="morpho_blue_tvl" stroke="#8b5cf6" strokeWidth={3} name="Morpho Blue" />
-                    <Line type="monotone" dataKey="hyperlend_tvl" stroke="#3b82f6" strokeWidth={3} name="HyperLend" />
-                    <Line type="monotone" dataKey="hypurrfi_tvl" stroke="#10b981" strokeWidth={3} name="Hypurrfi" />
-                    <Line type="monotone" dataKey="euler_tvl" stroke="#f59e0b" strokeWidth={3} name="Euler" />
-                  </LineChart>
+                    <Line type="monotone" dataKey="morpho_blue_tvl" stroke="#8b5cf6" strokeWidth={2} name="Morpho Blue" dot={false} />
+                    <Line type="monotone" dataKey="hyperlend_tvl" stroke="#3b82f6" strokeWidth={2} name="HyperLend" dot={false} />
+                    <Line type="monotone" dataKey="hypurrfi_tvl" stroke="#10b981" strokeWidth={2} name="Hypurrfi" dot={false} />
+                    <Line type="monotone" dataKey="euler_tvl" stroke="#f59e0b" strokeWidth={2} name="Euler" dot={false} />
+                    <Line type="monotone" dataKey="total_tvl" stroke="#1a1a1a" strokeWidth={4} name="Total TVL" dot={false} strokeDasharray="5 5" />
+                  </ComposedChart>
                 </ResponsiveContainer>
               ) : (
                 <div className="loading">Loading TVL data...</div>
@@ -834,142 +846,118 @@ export default function Dashboard() {
         <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '1rem', color: '#1a1a1a' }}>
           Active Users Analytics
         </h1>
-        <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '2rem', fontStyle: 'italic' }}>
-          Using wallet addresses as a proxy for users. Counts may vary due to various factors.
+        <p style={{ fontSize: '1rem', color: '#666', marginBottom: '2rem' }}>
+          Distinct wallet addresses across lending, spot trading, and perpetual trading activities
         </p>
 
         <div className="section">
-          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '2rem' }}>
-            {/* Daily Active Users Time Series Chart - Left 2/3 */}
-            <div>
-              <h2 style={{ marginBottom: '1rem' }}>Daily Active Users Over Time</h2>
-              <div className="chart-container">
-                {dailyActiveUsersData.length > 0 ? (
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={dailyActiveUsersData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="displayDate" angle={-45} textAnchor="end" height={80} />
-                      <YAxis />
-                      <Tooltip />
-                      <Legend />
-                      <Line type="monotone" dataKey="lending_users" stroke="#10b981" name="Lending Users" strokeWidth={2} dot={false} />
-                      <Line type="monotone" dataKey="spot_users" stroke="#3b82f6" name="Spot Trading Users" strokeWidth={2} dot={false} />
-                      <Line type="monotone" dataKey="perp_users" stroke="#8b5cf6" name="Perp Trading Users" strokeWidth={2} dot={false} />
-                      <Line type="monotone" dataKey="total_unique_users" stroke="#ef4444" name="Total Unique Users" strokeWidth={3} dot={false} strokeDasharray="5 5" />
-                    </LineChart>
-                  </ResponsiveContainer>
-                ) : (
-                  <div className="loading">Loading daily active users data...</div>
-                )}
-              </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+            {/* Total Users Card */}
+            <div style={{
+              padding: '2rem',
+              backgroundColor: '#f8fafc',
+              borderRadius: '8px',
+              border: '2px solid #e0e0e0'
+            }}>
+              <h2 style={{ fontSize: '1.3rem', marginBottom: '0.5rem', color: '#1a1a1a' }}>Total Unique Users</h2>
+              <p style={{ fontSize: '3rem', fontWeight: 700, color: '#8b5cf6', margin: '1rem 0' }}>43,808</p>
+              <p style={{ fontSize: '0.9rem', color: '#666' }}>Distinct wallet addresses participating in USDH activities</p>
             </div>
 
-            {/* User Stats Table - Right 1/3 */}
+            {/* Breakdown by Category */}
             <div style={{
-              padding: '1.5rem',
+              padding: '2rem',
               backgroundColor: '#ffffff',
               borderRadius: '8px',
-              border: '1px solid #e0e0e0',
-              height: 'fit-content'
+              border: '1px solid #e0e0e0'
             }}>
-              <h2 style={{ fontSize: '1.1rem', marginBottom: '1rem', color: '#1a1a1a' }}>User Metrics</h2>
-
-              {/* Total Users */}
-              <div style={{ marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '2px solid #e0e0e0' }}>
-                <div style={{ fontSize: '0.85rem', color: '#666', marginBottom: '0.25rem' }}>Total Unique Users</div>
-                <div style={{ fontSize: '2rem', fontWeight: 700, color: '#8b5cf6' }}>43,808</div>
-              </div>
-
-              {/* Breakdown Table */}
-              <div style={{ fontSize: '0.9rem' }}>
-                <div style={{ fontWeight: 600, color: '#666', marginBottom: '0.75rem', fontSize: '0.85rem' }}>Activity Breakdown</div>
-                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                  <tbody>
-                    <tr style={{ borderBottom: '1px solid #f0f0f0' }}>
-                      <td style={{ padding: '0.5rem 0', fontWeight: 500 }}>Perp Only</td>
-                      <td style={{ padding: '0.5rem 0', textAlign: 'right', color: '#666' }}>28,474</td>
-                    </tr>
-                    <tr style={{ borderBottom: '1px solid #f0f0f0' }}>
-                      <td style={{ padding: '0.5rem 0', fontWeight: 500 }}>Spot Only</td>
-                      <td style={{ padding: '0.5rem 0', textAlign: 'right', color: '#666' }}>9,417</td>
-                    </tr>
-                    <tr style={{ borderBottom: '1px solid #f0f0f0' }}>
-                      <td style={{ padding: '0.5rem 0', fontWeight: 500 }}>Spot + Perp</td>
-                      <td style={{ padding: '0.5rem 0', textAlign: 'right', color: '#666' }}>4,700</td>
-                    </tr>
-                    <tr style={{ borderBottom: '1px solid #f0f0f0' }}>
-                      <td style={{ padding: '0.5rem 0', fontWeight: 500 }}>All Three</td>
-                      <td style={{ padding: '0.5rem 0', textAlign: 'right', color: '#666' }}>553</td>
-                    </tr>
-                    <tr style={{ borderBottom: '1px solid #f0f0f0' }}>
-                      <td style={{ padding: '0.5rem 0', fontWeight: 500 }}>Lending + Perp</td>
-                      <td style={{ padding: '0.5rem 0', textAlign: 'right', color: '#666' }}>308</td>
-                    </tr>
-                    <tr style={{ borderBottom: '1px solid #f0f0f0' }}>
-                      <td style={{ padding: '0.5rem 0', fontWeight: 500 }}>Lending + Spot</td>
-                      <td style={{ padding: '0.5rem 0', textAlign: 'right', color: '#666' }}>262</td>
-                    </tr>
-                    <tr>
-                      <td style={{ padding: '0.5rem 0', fontWeight: 500 }}>Lending Only</td>
-                      <td style={{ padding: '0.5rem 0', textAlign: 'right', color: '#666' }}>94</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <h2 style={{ fontSize: '1.2rem', marginBottom: '1.5rem', color: '#1a1a1a' }}>User Activity Breakdown</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #f0f0f0' }}>
+                  <span style={{ fontWeight: 500 }}>Perp Only</span>
+                  <span style={{ color: '#666', fontWeight: 600 }}>28,474</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #f0f0f0' }}>
+                  <span style={{ fontWeight: 500 }}>Spot Only</span>
+                  <span style={{ color: '#666', fontWeight: 600 }}>9,417</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #f0f0f0' }}>
+                  <span style={{ fontWeight: 500 }}>Spot + Perp</span>
+                  <span style={{ color: '#666', fontWeight: 600 }}>4,700</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #f0f0f0' }}>
+                  <span style={{ fontWeight: 500 }}>All Three</span>
+                  <span style={{ color: '#666', fontWeight: 600 }}>553</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #f0f0f0' }}>
+                  <span style={{ fontWeight: 500 }}>Lending + Perp</span>
+                  <span style={{ color: '#666', fontWeight: 600 }}>308</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #f0f0f0' }}>
+                  <span style={{ fontWeight: 500 }}>Lending + Spot</span>
+                  <span style={{ color: '#666', fontWeight: 600 }}>262</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0' }}>
+                  <span style={{ fontWeight: 500 }}>Lending Only</span>
+                  <span style={{ color: '#666', fontWeight: 600 }}>94</span>
+                </div>
               </div>
             </div>
+          </div>
+
+          {/* Daily Active Users Time Series Chart */}
+          <div style={{ marginTop: '2rem' }}>
+            <h2 style={{ marginBottom: '1rem' }}>Daily Active Users Over Time</h2>
+            <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1rem' }}>
+              Total unique users line shows true distinct wallet addresses (deduplicated across all three categories)
+            </p>
+            <div className="chart-container">
+              {dailyActiveUsersData.length > 0 ? (
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={dailyActiveUsersData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="displayDate" angle={-45} textAnchor="end" height={80} />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line type="monotone" dataKey="lending_users" stroke="#10b981" name="Lending Users" strokeWidth={2} dot={false} />
+                    <Line type="monotone" dataKey="spot_users" stroke="#3b82f6" name="Spot Trading Users" strokeWidth={2} dot={false} />
+                    <Line type="monotone" dataKey="perp_users" stroke="#8b5cf6" name="Perp Trading Users" strokeWidth={2} dot={false} />
+                    <Line type="monotone" dataKey="total_unique_users" stroke="#ef4444" name="Total Unique Users (Deduplicated)" strokeWidth={3} dot={false} strokeDasharray="5 5" />
+                  </LineChart>
+                </ResponsiveContainer>
+              ) : (
+                <div className="loading">Loading daily active users data...</div>
+              )}
+            </div>
+          </div>
+
+          <div style={{ marginTop: '1.5rem', padding: '1rem', backgroundColor: '#fffbeb', borderRadius: '8px', border: '1px solid #fbbf24' }}>
+            <p style={{ fontSize: '0.9rem', color: '#92400e', margin: 0 }}>
+              <strong>Note:</strong> Hyperliquid (HyperCore) addresses may differ from EVM addresses, potentially leading to a slight overcount for users active on both chains.
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Footer */}
-      <footer style={{
-        marginTop: '4rem',
-        paddingTop: '2rem',
-        borderTop: '2px solid #e0e0e0',
-        textAlign: 'center'
-      }}>
-        <div style={{ marginBottom: '1rem' }}>
-          <a
-            href="https://dune.com/agaperste/usdh-growth-felix-campaign-on-morpho-through-merkl"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-block',
-              padding: '0.75rem 1.5rem',
-              backgroundColor: '#8b5cf6',
-              color: 'white',
-              textDecoration: 'none',
-              borderRadius: '6px',
-              fontWeight: 600,
-              fontSize: '0.95rem',
-              transition: 'background-color 0.2s'
-            }}
-            onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#7c3aed'}
-            onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#8b5cf6'}
-          >
-            🔍 Deep Dive: USDH × Felix Campaign on Morpho
-          </a>
-        </div>
-        <div style={{
-          fontSize: '0.9rem',
-          color: '#666',
-          marginTop: '1rem'
-        }}>
-          Powered by{' '}
-          <a
-            href="https://allium.so"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              color: '#8b5cf6',
-              textDecoration: 'none',
-              fontWeight: 600
-            }}
-          >
-            Allium
-          </a>
-        </div>
-      </footer>
+      {/*
+        TODO: Add campaign markers to charts
+
+        REMINDER: Need to add vertical markers on the charts to denote:
+        - USDH Felix Campaign on HyperEVM on Morpho
+        - Campaign start date (TBD)
+        - Campaign end date (TBD)
+
+        Implementation: Use ReferenceLine component from Recharts with:
+        - x={campaignStartDate}
+        - stroke="#00ff00" (or appropriate color)
+        - strokeWidth={2}
+        - label="Campaign Start"
+
+        Apply to relevant charts:
+        - HyperEVM Lending: Daily Deposit & Withdrawal Flow
+        - HyperEVM Lending: TVL by Project
+      */}
     </div>
   )
 }
