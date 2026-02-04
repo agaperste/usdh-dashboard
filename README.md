@@ -92,31 +92,28 @@ usdh-dashboard/
 
 ## Data Update Strategy
 
-### Current: Static Data
-The dashboard currently uses static JSON files with data from Sep 15, 2025 to present.
+### Automated Daily Refresh
 
-### Future: Live Data
-To enable live data updates:
+Dashboard data is **automatically updated daily at 23:00 UTC** via GitHub Actions. The workflow:
 
-1. **Set up API endpoint** to run Allium SQL queries
-2. **Add data fetching** in `page.tsx` using `useEffect` or Next.js server components
-3. **Implement caching** to avoid rate limits (e.g., cache for 1 hour)
-4. **Add loading states** and error handling
+1. Fetches latest data from Allium's blockchain analytics platform
+2. Updates all JSON files in the `data/` directory
+3. Commits changes to the repository
+4. Vercel auto-deploys the updated dashboard
 
-Example implementation:
-```typescript
-// In app/api/usdh-data/route.ts
-export async function GET() {
-  const data = await fetchFromAllium()
-  return Response.json(data)
-}
+### Manual Data Refresh
 
-// In app/page.tsx
-useEffect(() => {
-  fetch('/api/usdh-data')
-    .then(res => res.json())
-    .then(data => setChartData(data))
-}, [])
+To manually update the data:
+
+```bash
+# Set your Allium API key
+export ALLIUM_API_KEY=your_api_key_here
+
+# Install dependencies (if not already done)
+npm install axios
+
+# Run the data fetch script
+node scripts/fetch-data.js
 ```
 
 ## Volume Insights (Last 30 Days)
