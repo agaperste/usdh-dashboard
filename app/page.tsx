@@ -417,6 +417,41 @@ export default function Dashboard() {
 
   return (
     <div className="container">
+      {/* Sticky Navigation */}
+      <nav style={{
+        position: 'sticky',
+        top: 0,
+        backgroundColor: '#ffffff',
+        borderBottom: '2px solid #e0e0e0',
+        padding: '1rem 0',
+        zIndex: 1000,
+        marginBottom: '2rem'
+      }}>
+        <div style={{
+          display: 'flex',
+          gap: '1rem',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexWrap: 'wrap'
+        }}>
+          <a href="#top-projects" style={{ fontSize: '0.9rem', color: '#666', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f3f4f6'; e.currentTarget.style.color = '#1a1a1a' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#666' }}>
+            📊 Top Projects
+          </a>
+          <a href="#lending" style={{ fontSize: '0.9rem', color: '#666', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f3f4f6'; e.currentTarget.style.color = '#1a1a1a' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#666' }}>
+            💰 Lending
+          </a>
+          <a href="#dex" style={{ fontSize: '0.9rem', color: '#666', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f3f4f6'; e.currentTarget.style.color = '#1a1a1a' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#666' }}>
+            🔄 Spot Trading
+          </a>
+          <a href="#perpetuals" style={{ fontSize: '0.9rem', color: '#666', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f3f4f6'; e.currentTarget.style.color = '#1a1a1a' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#666' }}>
+            📈 Perpetuals
+          </a>
+          <a href="#users" style={{ fontSize: '0.9rem', color: '#666', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f3f4f6'; e.currentTarget.style.color = '#1a1a1a' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#666' }}>
+            👥 Users
+          </a>
+        </div>
+      </nav>
+
       <header>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <div>
@@ -500,38 +535,29 @@ export default function Dashboard() {
               }}
             />
           </div>
-          <div style={{ marginLeft: 'auto' }}>
-            <a
-              href="https://dune.com/agaperste/usdh-growth-felix-campaign-on-morpho-through-merkl"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontSize: '0.9rem',
-                color: '#8b5cf6',
-                textDecoration: 'none',
-                padding: '8px 16px',
-                border: '1px solid #8b5cf6',
-                borderRadius: '4px',
-                display: 'inline-block',
-                transition: 'all 0.2s'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#8b5cf6'
-                e.currentTarget.style.color = '#ffffff'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent'
-                e.currentTarget.style.color = '#8b5cf6'
-              }}
-            >
-              📊 View Dune Dashboard
-            </a>
+          <div style={{ marginLeft: 'auto', maxWidth: '400px' }}>
+            <p style={{ fontSize: '0.85rem', color: '#666', margin: 0, lineHeight: 1.5 }}>
+              To see USDH supply and bridging between HyperCore and HyperEVM and Felix campaign stats,{' '}
+              <a
+                href="https://dune.com/agaperste/usdh-growth-felix-campaign-on-morpho-through-merkl"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: '#8b5cf6',
+                  textDecoration: 'underline',
+                  fontWeight: 500
+                }}
+              >
+                visit this dashboard
+              </a>
+              .
+            </p>
           </div>
         </div>
       </header>
 
       {/* Top Projects Summary */}
-      <div className="section">
+      <div id="top-projects" className="section">
         <h2>Top Projects Driving USDH Usage</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2rem' }}>
           <div>
@@ -633,7 +659,7 @@ export default function Dashboard() {
       {/* ============================================ */}
       {/* LENDING SECTION */}
       {/* ============================================ */}
-      <div style={{ marginBottom: '3rem' }}>
+      <div id="lending" style={{ marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '2rem', color: '#1a1a1a' }}>
           HyperEVM Lending
         </h1>
@@ -706,7 +732,7 @@ export default function Dashboard() {
       {/* ============================================ */}
       {/* DEX SECTION */}
       {/* ============================================ */}
-      <div style={{ marginBottom: '3rem' }}>
+      <div id="dex" style={{ marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '2rem', color: '#1a1a1a' }}>
           HyperEVM DEX
         </h1>
@@ -769,7 +795,7 @@ export default function Dashboard() {
       {/* ============================================ */}
       {/* HYPERCORE SECTION */}
       {/* ============================================ */}
-      <div style={{ marginBottom: '3rem' }}>
+      <div id="perpetuals" style={{ marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '2rem', color: '#1a1a1a' }}>
           HyperCore (Hyperliquid) Perpetuals
         </h1>
@@ -869,7 +895,7 @@ export default function Dashboard() {
       {/* ============================================ */}
       {/* USER ANALYTICS SECTION */}
       {/* ============================================ */}
-      <div style={{ marginBottom: '3rem' }}>
+      <div id="users" style={{ marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '1rem', color: '#1a1a1a' }}>
           Active Users Analytics
         </h1>
