@@ -471,7 +471,7 @@ export default function Dashboard() {
         </div>
 
         {/* Date Range Selector */}
-        <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'center' }}>
+        <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
           <div>
             <label style={{ fontSize: '0.9rem', color: '#666', marginRight: '0.5rem' }}>Start Date:</label>
             <input
@@ -499,6 +499,33 @@ export default function Dashboard() {
                 fontSize: '0.9rem'
               }}
             />
+          </div>
+          <div style={{ marginLeft: 'auto' }}>
+            <a
+              href="https://dune.com/agaperste/usdh-growth-felix-campaign-on-morpho-through-merkl"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: '0.9rem',
+                color: '#8b5cf6',
+                textDecoration: 'none',
+                padding: '8px 16px',
+                border: '1px solid #8b5cf6',
+                borderRadius: '4px',
+                display: 'inline-block',
+                transition: 'all 0.2s'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#8b5cf6'
+                e.currentTarget.style.color = '#ffffff'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = '#8b5cf6'
+              }}
+            >
+              📊 View Dune Dashboard
+            </a>
           </div>
         </div>
       </header>
