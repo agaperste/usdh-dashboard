@@ -95,6 +95,7 @@ const QUERIES = {
     FROM hyperliquid.dex.trades
     WHERE (token_a_symbol = 'USDH' OR token_b_symbol = 'USDH')
       AND timestamp >= DATE '2025-09-15'
+      AND market_type = 'perpetuals'
     GROUP BY DATE_TRUNC('day', timestamp), perp_dex
     ORDER BY date ASC, perp_dex
   `,
@@ -107,8 +108,10 @@ const QUERIES = {
     FROM hyperliquid.dex.trades
     WHERE (token_a_symbol = 'USDH' OR token_b_symbol = 'USDH')
       AND timestamp >= DATE '2025-09-15'
+      AND market_type = 'perpetuals'
     GROUP BY DATE_TRUNC('day', timestamp), coin
     ORDER BY date ASC, coin
+    LIMIT 10000
   `,
 
   hypercore_by_protocol_and_coin_data: `
@@ -120,8 +123,27 @@ const QUERIES = {
     FROM hyperliquid.dex.trades
     WHERE (token_a_symbol = 'USDH' OR token_b_symbol = 'USDH')
       AND timestamp >= DATE '2025-09-15'
+      AND market_type = 'perpetuals'
     GROUP BY DATE_TRUNC('day', timestamp), perp_dex, coin
     ORDER BY date ASC, perp_dex, coin
+    LIMIT 10000
+  `,
+
+  hyperliquid_spot_data: `
+    SELECT
+      DATE_TRUNC('day', timestamp) as date,
+      CASE
+        WHEN token_a_symbol = 'USDH' THEN CONCAT(token_b_symbol, '/USDH')
+        ELSE CONCAT(token_a_symbol, '/USDH')
+      END as token_pair,
+      SUM(usd_amount) as trading_volume_usd
+    FROM hyperliquid.dex.trades
+    WHERE (token_a_symbol = 'USDH' OR token_b_symbol = 'USDH')
+      AND timestamp >= DATE '2025-09-15'
+      AND market_type = 'spot'
+    GROUP BY DATE_TRUNC('day', timestamp), token_pair
+    ORDER BY date ASC, token_pair
+    LIMIT 10000
   `,
 
   daily_active_users_data: `

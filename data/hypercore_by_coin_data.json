@@ -4999,6 +4999,296 @@
       "date": "2026-02-04T00:00:00",
       "coin": "flx:TSLA",
       "trading_volume_usd": "1175735.0356000000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "flx:XMR",
+      "trading_volume_usd": "486686.8248000000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "km:AAPL",
+      "trading_volume_usd": "336118.7088500000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "km:BABA",
+      "trading_volume_usd": "757544.9021000000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "km:GOLD",
+      "trading_volume_usd": "2212452.9689100000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "km:GOOGL",
+      "trading_volume_usd": "2807846.7620800000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "km:SILVER",
+      "trading_volume_usd": "5650254.5687270000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "km:SMALL2000",
+      "trading_volume_usd": "7312759.6673600000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "km:TSLA",
+      "trading_volume_usd": "406770.3354900000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "km:US500",
+      "trading_volume_usd": "33467882.7338300000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "km:USBOND",
+      "trading_volume_usd": "572266.2131860000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "km:USENERGY",
+      "trading_volume_usd": "732034.8112400000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "km:USOIL",
+      "trading_volume_usd": "177850.8041600000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "km:USTECH",
+      "trading_volume_usd": "23676274.1285200000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "vntl:ANTHROPIC",
+      "trading_volume_usd": "106581.5181200000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "vntl:BIOTECH",
+      "trading_volume_usd": "190289.2577200000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "vntl:DEFENSE",
+      "trading_volume_usd": "179459.0930000000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "vntl:ENERGY",
+      "trading_volume_usd": "360135.9083100000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "vntl:INFOTECH",
+      "trading_volume_usd": "334485.7515900000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "vntl:MAG7",
+      "trading_volume_usd": "8737825.4753960000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "vntl:NUCLEAR",
+      "trading_volume_usd": "501542.5613500000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "vntl:OPENAI",
+      "trading_volume_usd": "626345.1515200000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "vntl:ROBOT",
+      "trading_volume_usd": "778691.8590700000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "vntl:SEMIS",
+      "trading_volume_usd": "2169445.7991900000"
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "coin": "vntl:SPACEX",
+      "trading_volume_usd": "243272.8668000000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "flx:COIN",
+      "trading_volume_usd": "1097017.1415000000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "flx:COPPER",
+      "trading_volume_usd": "670147.2637300000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "flx:CRCL",
+      "trading_volume_usd": "789140.1015300000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "flx:GOLD",
+      "trading_volume_usd": "7338413.4196000000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "flx:NVDA",
+      "trading_volume_usd": "3898339.1628000000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "flx:OIL",
+      "trading_volume_usd": "441753.6151030000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "flx:PALLADIUM",
+      "trading_volume_usd": "334938.5059000000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "flx:PLATINUM",
+      "trading_volume_usd": "7939445.2479000000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "flx:SILVER",
+      "trading_volume_usd": "14172580.8709200000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "flx:TSLA",
+      "trading_volume_usd": "1530836.1177000000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "flx:XMR",
+      "trading_volume_usd": "906598.5517000000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "km:AAPL",
+      "trading_volume_usd": "104036.0167300000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "km:BABA",
+      "trading_volume_usd": "209900.3093900000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "km:GOLD",
+      "trading_volume_usd": "1595866.0560200000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "km:GOOGL",
+      "trading_volume_usd": "343147.2596000000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "km:SILVER",
+      "trading_volume_usd": "4037886.6771380000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "km:SMALL2000",
+      "trading_volume_usd": "1466519.8868000000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "km:TSLA",
+      "trading_volume_usd": "350601.9342000000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "km:US500",
+      "trading_volume_usd": "12611740.2920800000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "km:USBOND",
+      "trading_volume_usd": "496320.5232840000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "km:USENERGY",
+      "trading_volume_usd": "1238505.8361090000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "km:USOIL",
+      "trading_volume_usd": "71231.7833970000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "km:USTECH",
+      "trading_volume_usd": "3208921.2630500000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "vntl:ANTHROPIC",
+      "trading_volume_usd": "26304.5369800000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "vntl:BIOTECH",
+      "trading_volume_usd": "68472.9778500000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "vntl:DEFENSE",
+      "trading_volume_usd": "70339.1076800000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "vntl:ENERGY",
+      "trading_volume_usd": "476595.6604900000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "vntl:INFOTECH",
+      "trading_volume_usd": "494524.8342800000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "vntl:MAG7",
+      "trading_volume_usd": "8696913.7436710000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "vntl:NUCLEAR",
+      "trading_volume_usd": "311166.3501700000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "vntl:OPENAI",
+      "trading_volume_usd": "181912.7721600000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "vntl:ROBOT",
+      "trading_volume_usd": "467754.9524600000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "vntl:SEMIS",
+      "trading_volume_usd": "1324244.5465900000"
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "coin": "vntl:SPACEX",
+      "trading_volume_usd": "247416.0762000000"
     }
   ]
 }

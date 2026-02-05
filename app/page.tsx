@@ -22,6 +22,7 @@ import hypercoreData from '../data/hypercore_data.json'
 import hypercoreByProtocolRawData from '../data/hypercore_by_protocol_data.json'
 import hypercoreByCoinRawData from '../data/hypercore_by_coin_data.json'
 import hypercoreByProtocolAndCoinRawData from '../data/hypercore_by_protocol_and_coin_data.json'
+import hyperliquidSpotRawData from '../data/hyperliquid_spot_data.json'
 import dailyActiveUsersRawData from '../data/daily_active_users_data.json'
 
 interface LendingRecord {
@@ -81,6 +82,12 @@ interface HypercoreByProtocolAndCoinRecord {
   trading_volume_usd: string
 }
 
+interface HyperliquidSpotRecord {
+  date: string
+  token_pair: string
+  trading_volume_usd: string
+}
+
 interface DailyActiveUsersRecord {
   date: string
   lending_users: number
@@ -102,6 +109,7 @@ export default function Dashboard() {
   const [hypercoreByProtocolData, setHypercoreByProtocolData] = useState<any[]>([])
   const [hypercoreByCoinData, setHypercoreByCoinData] = useState<any[]>([])
   const [hypercoreByProtocolAndCoinData, setHypercoreByProtocolAndCoinData] = useState<any[]>([])
+  const [hyperliquidSpotData, setHyperliquidSpotData] = useState<any[]>([])
   const [dailyActiveUsersData, setDailyActiveUsersData] = useState<any[]>([])
   const [topProjects, setTopProjects] = useState<any>({})
 
@@ -122,6 +130,7 @@ export default function Dashboard() {
     processHypercoreByProtocol()
     processHypercoreByCoin()
     processHypercoreByProtocolAndCoin()
+    processHyperliquidSpot()
     processDailyActiveUsers()
     calculateTopProjects()
   }
@@ -339,6 +348,31 @@ export default function Dashboard() {
       }))
 
     setHypercoreByProtocolAndCoinData(sortedData)
+  }
+
+  const processHyperliquidSpot = () => {
+    if (!hyperliquidSpotRawData?.data) {
+      setHyperliquidSpotData([])
+      return
+    }
+    const records = (hyperliquidSpotRawData.data as HyperliquidSpotRecord[]).filter(r => filterByDateRange(r.date))
+
+    const dateMap: { [key: string]: any } = {}
+    records.forEach(record => {
+      const date = record.date.split('T')[0]
+      if (!dateMap[date]) {
+        dateMap[date] = {
+          date,
+          sortDate: new Date(record.date).getTime(),
+          displayDate: new Date(record.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+        }
+      }
+      const pairKey = record.token_pair.replace('/', '_').toLowerCase()
+      dateMap[date][pairKey] = (dateMap[date][pairKey] || 0) + parseFloat(record.trading_volume_usd)
+    })
+
+    const sortedData = Object.values(dateMap).sort((a: any, b: any) => a.sortDate - b.sortDate)
+    setHyperliquidSpotData(sortedData)
   }
 
   const processDailyActiveUsers = () => {
@@ -789,11 +823,46 @@ export default function Dashboard() {
         </div>
       </div>
 
+      {/* ============================================ */}
+      {/* HYPERLIQUID SPOT SECTION */}
+      {/* ============================================ */}
+      <div id="hyperliquid-spot" style={{ marginBottom: '3rem' }}>
+        <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '2rem', color: '#1a1a1a' }}>
+          Hyperliquid Spot Trading
+        </h1>
+        <p style={{ fontSize: '1rem', color: '#666', marginBottom: '2rem' }}>
+          USDH spot trading pairs on Hyperliquid's native DEX
+        </p>
+
+        <div className="section">
+          <h2>Daily Trading Volume by Token Pair</h2>
+          <div className="chart-container">
+            {hyperliquidSpotData.length > 0 ? (
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={hyperliquidSpotData} barSize={30} margin={{ left: 20 }}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="displayDate" angle={-45} textAnchor="end" height={80} />
+                  <YAxis tickFormatter={formatCurrency} />
+                  <Tooltip formatter={(value: number) => formatCurrency(value)} />
+                  <Legend />
+                  <Bar dataKey="usdc_usdh" stackId="a" fill="#2563eb" name="USDC/USDH" />
+                  <Bar dataKey="hype_usdh" stackId="a" fill="#8b5cf6" name="HYPE/USDH" />
+                  <Bar dataKey="ueth_usdh" stackId="a" fill="#6366f1" name="UETH/USDH" />
+                  <Bar dataKey="ubtc_usdh" stackId="a" fill="#f59e0b" name="UBTC/USDH" />
+                </BarChart>
+              </ResponsiveContainer>
+            ) : (
+              <div className="loading">Loading spot data...</div>
+            )}
+          </div>
+        </div>
+      </div>
+
       {/* Section Break */}
       <div style={{ borderTop: '3px solid #e0e0e0', margin: '3rem 0' }} />
 
       {/* ============================================ */}
-      {/* HYPERCORE SECTION */}
+      {/* HYPERCORE PERPETUALS SECTION */}
       {/* ============================================ */}
       <div id="perpetuals" style={{ marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '2rem', color: '#1a1a1a' }}>
@@ -817,7 +886,6 @@ export default function Dashboard() {
                     <Bar dataKey="flx" stackId="a" fill="#ef4444" name="Felix Exchange (flx)" />
                     <Bar dataKey="km" stackId="a" fill="#0ea5e9" name="Markets by Kinetiq (km)" />
                     <Bar dataKey="vntl" stackId="a" fill="#8b5cf6" name="Ventuals (vntl)" />
-                    <Bar dataKey="null" stackId="a" fill="#64748b" name="Hyperliquid" />
                   </BarChart>
                 </ResponsiveContainer>
               ) : (
