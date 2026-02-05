@@ -569,22 +569,45 @@ export default function Dashboard() {
               }}
             />
           </div>
-          <div style={{ marginLeft: 'auto', maxWidth: '400px' }}>
-            <p style={{ fontSize: '0.85rem', color: '#666', margin: 0, lineHeight: 1.5 }}>
-              To see USDH supply and bridging between HyperCore and HyperEVM and Felix campaign stats,{' '}
+          <div style={{
+            marginLeft: 'auto',
+            maxWidth: '450px',
+            padding: '1rem 1.25rem',
+            backgroundColor: '#f8f5ff',
+            border: '2px solid #8b5cf6',
+            borderRadius: '8px',
+            boxShadow: '0 2px 8px rgba(139, 92, 246, 0.1)'
+          }}>
+            <p style={{
+              fontSize: '0.95rem',
+              color: '#1a1a1a',
+              margin: 0,
+              lineHeight: 1.6,
+              fontWeight: 500
+            }}>
+              📊 For USDH supply, bridging, and Felix campaign stats →{' '}
               <a
                 href="https://dune.com/agaperste/usdh-growth-felix-campaign-on-morpho-through-merkl"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
                   color: '#8b5cf6',
-                  textDecoration: 'underline',
-                  fontWeight: 500
+                  textDecoration: 'none',
+                  fontWeight: 700,
+                  borderBottom: '2px solid #8b5cf6',
+                  transition: 'all 0.2s'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#6d28d9'
+                  e.currentTarget.style.borderBottomColor = '#6d28d9'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = '#8b5cf6'
+                  e.currentTarget.style.borderBottomColor = '#8b5cf6'
                 }}
               >
-                visit this dashboard
+                Visit Dune Dashboard
               </a>
-              .
             </p>
           </div>
         </div>
