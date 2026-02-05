@@ -1,3 +1,949 @@
 {
-"data":[{"date":"2025-09-24T00:00:00","lending_users":0,"spot_users":203,"perp_users":96,"total_unique_users":288},{"date":"2025-09-25T00:00:00","lending_users":0,"spot_users":344,"perp_users":94,"total_unique_users":413},{"date":"2025-09-26T00:00:00","lending_users":20,"spot_users":334,"perp_users":65,"total_unique_users":394},{"date":"2025-09-27T00:00:00","lending_users":20,"spot_users":332,"perp_users":159,"total_unique_users":483},{"date":"2025-09-28T00:00:00","lending_users":32,"spot_users":358,"perp_users":176,"total_unique_users":530},{"date":"2025-09-29T00:00:00","lending_users":36,"spot_users":413,"perp_users":191,"total_unique_users":597},{"date":"2025-09-30T00:00:00","lending_users":25,"spot_users":312,"perp_users":140,"total_unique_users":448},{"date":"2025-10-01T00:00:00","lending_users":31,"spot_users":451,"perp_users":152,"total_unique_users":602},{"date":"2025-10-02T00:00:00","lending_users":42,"spot_users":493,"perp_users":195,"total_unique_users":692},{"date":"2025-10-03T00:00:00","lending_users":38,"spot_users":414,"perp_users":168,"total_unique_users":572},{"date":"2025-10-04T00:00:00","lending_users":18,"spot_users":438,"perp_users":130,"total_unique_users":558},{"date":"2025-10-05T00:00:00","lending_users":25,"spot_users":414,"perp_users":147,"total_unique_users":555},{"date":"2025-10-06T00:00:00","lending_users":32,"spot_users":441,"perp_users":176,"total_unique_users":616},{"date":"2025-10-07T00:00:00","lending_users":31,"spot_users":442,"perp_users":157,"total_unique_users":601},{"date":"2025-10-08T00:00:00","lending_users":54,"spot_users":440,"perp_users":165,"total_unique_users":612},{"date":"2025-10-09T00:00:00","lending_users":53,"spot_users":515,"perp_users":182,"total_unique_users":709},{"date":"2025-10-10T00:00:00","lending_users":51,"spot_users":530,"perp_users":210,"total_unique_users":741},{"date":"2025-10-11T00:00:00","lending_users":63,"spot_users":547,"perp_users":183,"total_unique_users":723},{"date":"2025-10-12T00:00:00","lending_users":30,"spot_users":448,"perp_users":125,"total_unique_users":575},{"date":"2025-10-13T00:00:00","lending_users":43,"spot_users":447,"perp_users":131,"total_unique_users":583},{"date":"2025-10-14T00:00:00","lending_users":26,"spot_users":620,"perp_users":108,"total_unique_users":729},{"date":"2025-10-15T00:00:00","lending_users":28,"spot_users":407,"perp_users":104,"total_unique_users":505},{"date":"2025-10-16T00:00:00","lending_users":37,"spot_users":338,"perp_users":122,"total_unique_users":465},{"date":"2025-10-17T00:00:00","lending_users":47,"spot_users":691,"perp_users":124,"total_unique_users":810},{"date":"2025-10-18T00:00:00","lending_users":20,"spot_users":244,"perp_users":97,"total_unique_users":337},{"date":"2025-10-19T00:00:00","lending_users":24,"spot_users":362,"perp_users":107,"total_unique_users":461},{"date":"2025-10-20T00:00:00","lending_users":22,"spot_users":331,"perp_users":112,"total_unique_users":432},{"date":"2025-10-21T00:00:00","lending_users":20,"spot_users":285,"perp_users":105,"total_unique_users":384},{"date":"2025-10-22T00:00:00","lending_users":22,"spot_users":266,"perp_users":98,"total_unique_users":370},{"date":"2025-10-23T00:00:00","lending_users":31,"spot_users":351,"perp_users":92,"total_unique_users":448},{"date":"2025-10-24T00:00:00","lending_users":40,"spot_users":329,"perp_users":97,"total_unique_users":431},{"date":"2025-10-25T00:00:00","lending_users":26,"spot_users":466,"perp_users":111,"total_unique_users":581},{"date":"2025-10-26T00:00:00","lending_users":22,"spot_users":581,"perp_users":142,"total_unique_users":721},{"date":"2025-10-27T00:00:00","lending_users":28,"spot_users":538,"perp_users":134,"total_unique_users":669},{"date":"2025-10-28T00:00:00","lending_users":27,"spot_users":593,"perp_users":93,"total_unique_users":686},{"date":"2025-10-29T00:00:00","lending_users":28,"spot_users":684,"perp_users":106,"total_unique_users":781},{"date":"2025-10-30T00:00:00","lending_users":37,"spot_users":662,"perp_users":114,"total_unique_users":781},{"date":"2025-10-31T00:00:00","lending_users":23,"spot_users":541,"perp_users":86,"total_unique_users":628},{"date":"2025-11-01T00:00:00","lending_users":14,"spot_users":531,"perp_users":76,"total_unique_users":604},{"date":"2025-11-02T00:00:00","lending_users":26,"spot_users":499,"perp_users":89,"total_unique_users":582},{"date":"2025-11-03T00:00:00","lending_users":37,"spot_users":542,"perp_users":111,"total_unique_users":649},{"date":"2025-11-04T00:00:00","lending_users":48,"spot_users":623,"perp_users":138,"total_unique_users":751},{"date":"2025-11-05T00:00:00","lending_users":35,"spot_users":573,"perp_users":98,"total_unique_users":676},{"date":"2025-11-06T00:00:00","lending_users":18,"spot_users":486,"perp_users":104,"total_unique_users":578},{"date":"2025-11-07T00:00:00","lending_users":29,"spot_users":499,"perp_users":106,"total_unique_users":603},{"date":"2025-11-08T00:00:00","lending_users":11,"spot_users":396,"perp_users":65,"total_unique_users":457},{"date":"2025-11-09T00:00:00","lending_users":19,"spot_users":373,"perp_users":76,"total_unique_users":447},{"date":"2025-11-10T00:00:00","lending_users":20,"spot_users":444,"perp_users":76,"total_unique_users":525},{"date":"2025-11-11T00:00:00","lending_users":21,"spot_users":382,"perp_users":86,"total_unique_users":460},{"date":"2025-11-12T00:00:00","lending_users":15,"spot_users":363,"perp_users":90,"total_unique_users":456},{"date":"2025-11-13T00:00:00","lending_users":16,"spot_users":547,"perp_users":321,"total_unique_users":854},{"date":"2025-11-14T00:00:00","lending_users":34,"spot_users":648,"perp_users":435,"total_unique_users":1051},{"date":"2025-11-15T00:00:00","lending_users":16,"spot_users":580,"perp_users":321,"total_unique_users":875},{"date":"2025-11-16T00:00:00","lending_users":19,"spot_users":523,"perp_users":313,"total_unique_users":817},{"date":"2025-11-17T00:00:00","lending_users":10,"spot_users":483,"perp_users":302,"total_unique_users":765},{"date":"2025-11-18T00:00:00","lending_users":26,"spot_users":495,"perp_users":337,"total_unique_users":833},{"date":"2025-11-19T00:00:00","lending_users":23,"spot_users":472,"perp_users":352,"total_unique_users":813},{"date":"2025-11-20T00:00:00","lending_users":26,"spot_users":499,"perp_users":462,"total_unique_users":951},{"date":"2025-11-21T00:00:00","lending_users":57,"spot_users":616,"perp_users":618,"total_unique_users":1217},{"date":"2025-11-22T00:00:00","lending_users":37,"spot_users":422,"perp_users":540,"total_unique_users":952},{"date":"2025-11-23T00:00:00","lending_users":32,"spot_users":386,"perp_users":568,"total_unique_users":958},{"date":"2025-11-24T00:00:00","lending_users":31,"spot_users":412,"perp_users":798,"total_unique_users":1209},{"date":"2025-11-25T00:00:00","lending_users":26,"spot_users":379,"perp_users":768,"total_unique_users":1133},{"date":"2025-11-26T00:00:00","lending_users":22,"spot_users":428,"perp_users":1194,"total_unique_users":1595},{"date":"2025-11-27T00:00:00","lending_users":95,"spot_users":1664,"perp_users":12203,"total_unique_users":13216},{"date":"2025-11-28T00:00:00","lending_users":54,"spot_users":1179,"perp_users":5384,"total_unique_users":6328},{"date":"2025-11-29T00:00:00","lending_users":50,"spot_users":800,"perp_users":2124,"total_unique_users":2858},{"date":"2025-11-30T00:00:00","lending_users":68,"spot_users":680,"perp_users":1831,"total_unique_users":2454},{"date":"2025-12-01T00:00:00","lending_users":55,"spot_users":838,"perp_users":2764,"total_unique_users":3526},{"date":"2025-12-02T00:00:00","lending_users":41,"spot_users":942,"perp_users":2852,"total_unique_users":3712},{"date":"2025-12-03T00:00:00","lending_users":44,"spot_users":605,"perp_users":2064,"total_unique_users":2624},{"date":"2025-12-04T00:00:00","lending_users":49,"spot_users":519,"perp_users":1527,"total_unique_users":2031},{"date":"2025-12-05T00:00:00","lending_users":38,"spot_users":447,"perp_users":1120,"total_unique_users":1553},{"date":"2025-12-06T00:00:00","lending_users":23,"spot_users":339,"perp_users":902,"total_unique_users":1217},{"date":"2025-12-07T00:00:00","lending_users":35,"spot_users":484,"perp_users":984,"total_unique_users":1447},{"date":"2025-12-08T00:00:00","lending_users":29,"spot_users":474,"perp_users":1205,"total_unique_users":1660},{"date":"2025-12-09T00:00:00","lending_users":35,"spot_users":580,"perp_users":1465,"total_unique_users":2008},{"date":"2025-12-10T00:00:00","lending_users":34,"spot_users":441,"perp_users":1039,"total_unique_users":1474},{"date":"2025-12-11T00:00:00","lending_users":37,"spot_users":451,"perp_users":986,"total_unique_users":1431},{"date":"2025-12-12T00:00:00","lending_users":37,"spot_users":384,"perp_users":920,"total_unique_users":1298},{"date":"2025-12-13T00:00:00","lending_users":21,"spot_users":299,"perp_users":641,"total_unique_users":935},{"date":"2025-12-14T00:00:00","lending_users":27,"spot_users":353,"perp_users":722,"total_unique_users":1075},{"date":"2025-12-15T00:00:00","lending_users":38,"spot_users":376,"perp_users":846,"total_unique_users":1223},{"date":"2025-12-16T00:00:00","lending_users":22,"spot_users":414,"perp_users":852,"total_unique_users":1254},{"date":"2025-12-17T00:00:00","lending_users":37,"spot_users":484,"perp_users":1012,"total_unique_users":1476},{"date":"2025-12-18T00:00:00","lending_users":34,"spot_users":479,"perp_users":1142,"total_unique_users":1603},{"date":"2025-12-19T00:00:00","lending_users":27,"spot_users":441,"perp_users":895,"total_unique_users":1324},{"date":"2025-12-20T00:00:00","lending_users":23,"spot_users":266,"perp_users":878,"total_unique_users":1139},{"date":"2025-12-21T00:00:00","lending_users":20,"spot_users":262,"perp_users":718,"total_unique_users":986},{"date":"2025-12-22T00:00:00","lending_users":20,"spot_users":255,"perp_users":933,"total_unique_users":1187},{"date":"2025-12-23T00:00:00","lending_users":18,"spot_users":228,"perp_users":1108,"total_unique_users":1327},{"date":"2025-12-24T00:00:00","lending_users":21,"spot_users":189,"perp_users":916,"total_unique_users":1098},{"date":"2025-12-25T00:00:00","lending_users":18,"spot_users":219,"perp_users":787,"total_unique_users":1000},{"date":"2025-12-26T00:00:00","lending_users":17,"spot_users":217,"perp_users":1055,"total_unique_users":1265},{"date":"2025-12-27T00:00:00","lending_users":18,"spot_users":232,"perp_users":807,"total_unique_users":1036},{"date":"2025-12-28T00:00:00","lending_users":17,"spot_users":277,"perp_users":778,"total_unique_users":1049},{"date":"2025-12-29T00:00:00","lending_users":24,"spot_users":404,"perp_users":1081,"total_unique_users":1477},{"date":"2025-12-30T00:00:00","lending_users":17,"spot_users":330,"perp_users":1010,"total_unique_users":1329},{"date":"2025-12-31T00:00:00","lending_users":20,"spot_users":400,"perp_users":834,"total_unique_users":1216},{"date":"2026-01-01T00:00:00","lending_users":22,"spot_users":303,"perp_users":648,"total_unique_users":936},{"date":"2026-01-02T00:00:00","lending_users":22,"spot_users":314,"perp_users":918,"total_unique_users":1199},{"date":"2026-01-03T00:00:00","lending_users":17,"spot_users":193,"perp_users":633,"total_unique_users":823},{"date":"2026-01-04T00:00:00","lending_users":20,"spot_users":263,"perp_users":737,"total_unique_users":971},{"date":"2026-01-05T00:00:00","lending_users":19,"spot_users":333,"perp_users":1108,"total_unique_users":1419},{"date":"2026-01-06T00:00:00","lending_users":18,"spot_users":337,"perp_users":1170,"total_unique_users":1475},{"date":"2026-01-07T00:00:00","lending_users":15,"spot_users":318,"perp_users":979,"total_unique_users":1258},{"date":"2026-01-08T00:00:00","lending_users":17,"spot_users":301,"perp_users":1070,"total_unique_users":1343},{"date":"2026-01-09T00:00:00","lending_users":26,"spot_users":296,"perp_users":1099,"total_unique_users":1376},{"date":"2026-01-10T00:00:00","lending_users":24,"spot_users":263,"perp_users":800,"total_unique_users":1052},{"date":"2026-01-11T00:00:00","lending_users":20,"spot_users":191,"perp_users":1107,"total_unique_users":1298},{"date":"2026-01-12T00:00:00","lending_users":60,"spot_users":353,"perp_users":2171,"total_unique_users":2528},{"date":"2026-01-13T00:00:00","lending_users":44,"spot_users":389,"perp_users":2368,"total_unique_users":2746},{"date":"2026-01-14T00:00:00","lending_users":35,"spot_users":344,"perp_users":2528,"total_unique_users":2852},{"date":"2026-01-15T00:00:00","lending_users":46,"spot_users":413,"perp_users":2352,"total_unique_users":2754},{"date":"2026-01-16T00:00:00","lending_users":50,"spot_users":306,"perp_users":1710,"total_unique_users":2022},{"date":"2026-01-17T00:00:00","lending_users":31,"spot_users":234,"perp_users":1318,"total_unique_users":1555},{"date":"2026-01-18T00:00:00","lending_users":46,"spot_users":253,"perp_users":1465,"total_unique_users":1728},{"date":"2026-01-19T00:00:00","lending_users":75,"spot_users":360,"perp_users":1883,"total_unique_users":2259},{"date":"2026-01-20T00:00:00","lending_users":68,"spot_users":432,"perp_users":1864,"total_unique_users":2289},{"date":"2026-01-21T00:00:00","lending_users":70,"spot_users":382,"perp_users":1714,"total_unique_users":2109},{"date":"2026-01-22T00:00:00","lending_users":51,"spot_users":333,"perp_users":1702,"total_unique_users":2041},{"date":"2026-01-23T00:00:00","lending_users":49,"spot_users":340,"perp_users":2082,"total_unique_users":2405},{"date":"2026-01-24T00:00:00","lending_users":45,"spot_users":315,"perp_users":1646,"total_unique_users":1949},{"date":"2026-01-25T00:00:00","lending_users":42,"spot_users":325,"perp_users":1608,"total_unique_users":1930},{"date":"2026-01-26T00:00:00","lending_users":54,"spot_users":368,"perp_users":1906,"total_unique_users":2281},{"date":"2026-01-27T00:00:00","lending_users":67,"spot_users":556,"perp_users":2414,"total_unique_users":2945},{"date":"2026-01-28T00:00:00","lending_users":82,"spot_users":722,"perp_users":2797,"total_unique_users":3484},{"date":"2026-01-29T00:00:00","lending_users":63,"spot_users":566,"perp_users":2907,"total_unique_users":3453},{"date":"2026-01-30T00:00:00","lending_users":53,"spot_users":623,"perp_users":2717,"total_unique_users":3310},{"date":"2026-01-31T00:00:00","lending_users":57,"spot_users":502,"perp_users":1875,"total_unique_users":2364},{"date":"2026-02-01T00:00:00","lending_users":46,"spot_users":571,"perp_users":1542,"total_unique_users":2100},{"date":"2026-02-02T00:00:00","lending_users":49,"spot_users":664,"perp_users":2200,"total_unique_users":2836},{"date":"2026-02-03T00:00:00","lending_users":60,"spot_users":747,"perp_users":2548,"total_unique_users":3274},{"date":"2026-02-04T00:00:00","lending_users":52,"spot_users":606,"perp_users":2389,"total_unique_users":2984},{"date":"2026-02-05T00:00:00","lending_users":26,"spot_users":471,"perp_users":1730,"total_unique_users":2182}]
+  "data": [
+    {
+      "date": "2025-09-24T00:00:00",
+      "lending_users": 0,
+      "spot_users": 203,
+      "perp_users": 96,
+      "total_unique_users": 288
+    },
+    {
+      "date": "2025-09-25T00:00:00",
+      "lending_users": 0,
+      "spot_users": 344,
+      "perp_users": 94,
+      "total_unique_users": 413
+    },
+    {
+      "date": "2025-09-26T00:00:00",
+      "lending_users": 20,
+      "spot_users": 334,
+      "perp_users": 65,
+      "total_unique_users": 394
+    },
+    {
+      "date": "2025-09-27T00:00:00",
+      "lending_users": 20,
+      "spot_users": 332,
+      "perp_users": 159,
+      "total_unique_users": 483
+    },
+    {
+      "date": "2025-09-28T00:00:00",
+      "lending_users": 32,
+      "spot_users": 358,
+      "perp_users": 176,
+      "total_unique_users": 530
+    },
+    {
+      "date": "2025-09-29T00:00:00",
+      "lending_users": 36,
+      "spot_users": 413,
+      "perp_users": 191,
+      "total_unique_users": 597
+    },
+    {
+      "date": "2025-09-30T00:00:00",
+      "lending_users": 25,
+      "spot_users": 312,
+      "perp_users": 140,
+      "total_unique_users": 448
+    },
+    {
+      "date": "2025-10-01T00:00:00",
+      "lending_users": 31,
+      "spot_users": 451,
+      "perp_users": 152,
+      "total_unique_users": 602
+    },
+    {
+      "date": "2025-10-02T00:00:00",
+      "lending_users": 42,
+      "spot_users": 493,
+      "perp_users": 195,
+      "total_unique_users": 692
+    },
+    {
+      "date": "2025-10-03T00:00:00",
+      "lending_users": 38,
+      "spot_users": 414,
+      "perp_users": 168,
+      "total_unique_users": 572
+    },
+    {
+      "date": "2025-10-04T00:00:00",
+      "lending_users": 18,
+      "spot_users": 438,
+      "perp_users": 130,
+      "total_unique_users": 558
+    },
+    {
+      "date": "2025-10-05T00:00:00",
+      "lending_users": 25,
+      "spot_users": 414,
+      "perp_users": 147,
+      "total_unique_users": 555
+    },
+    {
+      "date": "2025-10-06T00:00:00",
+      "lending_users": 32,
+      "spot_users": 441,
+      "perp_users": 176,
+      "total_unique_users": 616
+    },
+    {
+      "date": "2025-10-07T00:00:00",
+      "lending_users": 31,
+      "spot_users": 442,
+      "perp_users": 157,
+      "total_unique_users": 601
+    },
+    {
+      "date": "2025-10-08T00:00:00",
+      "lending_users": 54,
+      "spot_users": 440,
+      "perp_users": 165,
+      "total_unique_users": 612
+    },
+    {
+      "date": "2025-10-09T00:00:00",
+      "lending_users": 53,
+      "spot_users": 515,
+      "perp_users": 182,
+      "total_unique_users": 709
+    },
+    {
+      "date": "2025-10-10T00:00:00",
+      "lending_users": 51,
+      "spot_users": 530,
+      "perp_users": 210,
+      "total_unique_users": 741
+    },
+    {
+      "date": "2025-10-11T00:00:00",
+      "lending_users": 63,
+      "spot_users": 547,
+      "perp_users": 183,
+      "total_unique_users": 723
+    },
+    {
+      "date": "2025-10-12T00:00:00",
+      "lending_users": 30,
+      "spot_users": 448,
+      "perp_users": 125,
+      "total_unique_users": 575
+    },
+    {
+      "date": "2025-10-13T00:00:00",
+      "lending_users": 43,
+      "spot_users": 447,
+      "perp_users": 131,
+      "total_unique_users": 583
+    },
+    {
+      "date": "2025-10-14T00:00:00",
+      "lending_users": 26,
+      "spot_users": 620,
+      "perp_users": 108,
+      "total_unique_users": 729
+    },
+    {
+      "date": "2025-10-15T00:00:00",
+      "lending_users": 28,
+      "spot_users": 407,
+      "perp_users": 104,
+      "total_unique_users": 505
+    },
+    {
+      "date": "2025-10-16T00:00:00",
+      "lending_users": 37,
+      "spot_users": 338,
+      "perp_users": 122,
+      "total_unique_users": 465
+    },
+    {
+      "date": "2025-10-17T00:00:00",
+      "lending_users": 47,
+      "spot_users": 691,
+      "perp_users": 124,
+      "total_unique_users": 810
+    },
+    {
+      "date": "2025-10-18T00:00:00",
+      "lending_users": 20,
+      "spot_users": 244,
+      "perp_users": 97,
+      "total_unique_users": 337
+    },
+    {
+      "date": "2025-10-19T00:00:00",
+      "lending_users": 24,
+      "spot_users": 362,
+      "perp_users": 107,
+      "total_unique_users": 461
+    },
+    {
+      "date": "2025-10-20T00:00:00",
+      "lending_users": 22,
+      "spot_users": 331,
+      "perp_users": 112,
+      "total_unique_users": 432
+    },
+    {
+      "date": "2025-10-21T00:00:00",
+      "lending_users": 20,
+      "spot_users": 285,
+      "perp_users": 105,
+      "total_unique_users": 384
+    },
+    {
+      "date": "2025-10-22T00:00:00",
+      "lending_users": 22,
+      "spot_users": 266,
+      "perp_users": 98,
+      "total_unique_users": 370
+    },
+    {
+      "date": "2025-10-23T00:00:00",
+      "lending_users": 31,
+      "spot_users": 351,
+      "perp_users": 92,
+      "total_unique_users": 448
+    },
+    {
+      "date": "2025-10-24T00:00:00",
+      "lending_users": 40,
+      "spot_users": 329,
+      "perp_users": 97,
+      "total_unique_users": 431
+    },
+    {
+      "date": "2025-10-25T00:00:00",
+      "lending_users": 26,
+      "spot_users": 466,
+      "perp_users": 111,
+      "total_unique_users": 581
+    },
+    {
+      "date": "2025-10-26T00:00:00",
+      "lending_users": 22,
+      "spot_users": 581,
+      "perp_users": 142,
+      "total_unique_users": 721
+    },
+    {
+      "date": "2025-10-27T00:00:00",
+      "lending_users": 28,
+      "spot_users": 538,
+      "perp_users": 134,
+      "total_unique_users": 669
+    },
+    {
+      "date": "2025-10-28T00:00:00",
+      "lending_users": 27,
+      "spot_users": 593,
+      "perp_users": 93,
+      "total_unique_users": 686
+    },
+    {
+      "date": "2025-10-29T00:00:00",
+      "lending_users": 28,
+      "spot_users": 684,
+      "perp_users": 106,
+      "total_unique_users": 781
+    },
+    {
+      "date": "2025-10-30T00:00:00",
+      "lending_users": 37,
+      "spot_users": 662,
+      "perp_users": 114,
+      "total_unique_users": 781
+    },
+    {
+      "date": "2025-10-31T00:00:00",
+      "lending_users": 23,
+      "spot_users": 541,
+      "perp_users": 86,
+      "total_unique_users": 628
+    },
+    {
+      "date": "2025-11-01T00:00:00",
+      "lending_users": 14,
+      "spot_users": 531,
+      "perp_users": 76,
+      "total_unique_users": 604
+    },
+    {
+      "date": "2025-11-02T00:00:00",
+      "lending_users": 26,
+      "spot_users": 499,
+      "perp_users": 89,
+      "total_unique_users": 582
+    },
+    {
+      "date": "2025-11-03T00:00:00",
+      "lending_users": 37,
+      "spot_users": 542,
+      "perp_users": 111,
+      "total_unique_users": 649
+    },
+    {
+      "date": "2025-11-04T00:00:00",
+      "lending_users": 48,
+      "spot_users": 623,
+      "perp_users": 138,
+      "total_unique_users": 751
+    },
+    {
+      "date": "2025-11-05T00:00:00",
+      "lending_users": 35,
+      "spot_users": 573,
+      "perp_users": 98,
+      "total_unique_users": 676
+    },
+    {
+      "date": "2025-11-06T00:00:00",
+      "lending_users": 18,
+      "spot_users": 486,
+      "perp_users": 104,
+      "total_unique_users": 578
+    },
+    {
+      "date": "2025-11-07T00:00:00",
+      "lending_users": 29,
+      "spot_users": 499,
+      "perp_users": 106,
+      "total_unique_users": 603
+    },
+    {
+      "date": "2025-11-08T00:00:00",
+      "lending_users": 11,
+      "spot_users": 396,
+      "perp_users": 65,
+      "total_unique_users": 457
+    },
+    {
+      "date": "2025-11-09T00:00:00",
+      "lending_users": 19,
+      "spot_users": 373,
+      "perp_users": 76,
+      "total_unique_users": 447
+    },
+    {
+      "date": "2025-11-10T00:00:00",
+      "lending_users": 20,
+      "spot_users": 444,
+      "perp_users": 76,
+      "total_unique_users": 525
+    },
+    {
+      "date": "2025-11-11T00:00:00",
+      "lending_users": 21,
+      "spot_users": 382,
+      "perp_users": 86,
+      "total_unique_users": 460
+    },
+    {
+      "date": "2025-11-12T00:00:00",
+      "lending_users": 15,
+      "spot_users": 363,
+      "perp_users": 90,
+      "total_unique_users": 456
+    },
+    {
+      "date": "2025-11-13T00:00:00",
+      "lending_users": 16,
+      "spot_users": 547,
+      "perp_users": 321,
+      "total_unique_users": 854
+    },
+    {
+      "date": "2025-11-14T00:00:00",
+      "lending_users": 34,
+      "spot_users": 648,
+      "perp_users": 435,
+      "total_unique_users": 1051
+    },
+    {
+      "date": "2025-11-15T00:00:00",
+      "lending_users": 16,
+      "spot_users": 580,
+      "perp_users": 321,
+      "total_unique_users": 875
+    },
+    {
+      "date": "2025-11-16T00:00:00",
+      "lending_users": 19,
+      "spot_users": 523,
+      "perp_users": 313,
+      "total_unique_users": 817
+    },
+    {
+      "date": "2025-11-17T00:00:00",
+      "lending_users": 10,
+      "spot_users": 483,
+      "perp_users": 302,
+      "total_unique_users": 765
+    },
+    {
+      "date": "2025-11-18T00:00:00",
+      "lending_users": 26,
+      "spot_users": 495,
+      "perp_users": 337,
+      "total_unique_users": 833
+    },
+    {
+      "date": "2025-11-19T00:00:00",
+      "lending_users": 23,
+      "spot_users": 472,
+      "perp_users": 352,
+      "total_unique_users": 813
+    },
+    {
+      "date": "2025-11-20T00:00:00",
+      "lending_users": 26,
+      "spot_users": 499,
+      "perp_users": 462,
+      "total_unique_users": 951
+    },
+    {
+      "date": "2025-11-21T00:00:00",
+      "lending_users": 57,
+      "spot_users": 616,
+      "perp_users": 618,
+      "total_unique_users": 1217
+    },
+    {
+      "date": "2025-11-22T00:00:00",
+      "lending_users": 37,
+      "spot_users": 422,
+      "perp_users": 540,
+      "total_unique_users": 952
+    },
+    {
+      "date": "2025-11-23T00:00:00",
+      "lending_users": 32,
+      "spot_users": 386,
+      "perp_users": 568,
+      "total_unique_users": 958
+    },
+    {
+      "date": "2025-11-24T00:00:00",
+      "lending_users": 31,
+      "spot_users": 412,
+      "perp_users": 798,
+      "total_unique_users": 1209
+    },
+    {
+      "date": "2025-11-25T00:00:00",
+      "lending_users": 26,
+      "spot_users": 379,
+      "perp_users": 768,
+      "total_unique_users": 1133
+    },
+    {
+      "date": "2025-11-26T00:00:00",
+      "lending_users": 22,
+      "spot_users": 428,
+      "perp_users": 1194,
+      "total_unique_users": 1595
+    },
+    {
+      "date": "2025-11-27T00:00:00",
+      "lending_users": 95,
+      "spot_users": 1664,
+      "perp_users": 12203,
+      "total_unique_users": 13216
+    },
+    {
+      "date": "2025-11-28T00:00:00",
+      "lending_users": 54,
+      "spot_users": 1179,
+      "perp_users": 5384,
+      "total_unique_users": 6328
+    },
+    {
+      "date": "2025-11-29T00:00:00",
+      "lending_users": 50,
+      "spot_users": 800,
+      "perp_users": 2124,
+      "total_unique_users": 2858
+    },
+    {
+      "date": "2025-11-30T00:00:00",
+      "lending_users": 68,
+      "spot_users": 680,
+      "perp_users": 1831,
+      "total_unique_users": 2454
+    },
+    {
+      "date": "2025-12-01T00:00:00",
+      "lending_users": 55,
+      "spot_users": 838,
+      "perp_users": 2764,
+      "total_unique_users": 3526
+    },
+    {
+      "date": "2025-12-02T00:00:00",
+      "lending_users": 41,
+      "spot_users": 942,
+      "perp_users": 2852,
+      "total_unique_users": 3712
+    },
+    {
+      "date": "2025-12-03T00:00:00",
+      "lending_users": 44,
+      "spot_users": 605,
+      "perp_users": 2064,
+      "total_unique_users": 2624
+    },
+    {
+      "date": "2025-12-04T00:00:00",
+      "lending_users": 49,
+      "spot_users": 519,
+      "perp_users": 1527,
+      "total_unique_users": 2031
+    },
+    {
+      "date": "2025-12-05T00:00:00",
+      "lending_users": 38,
+      "spot_users": 447,
+      "perp_users": 1120,
+      "total_unique_users": 1553
+    },
+    {
+      "date": "2025-12-06T00:00:00",
+      "lending_users": 23,
+      "spot_users": 339,
+      "perp_users": 902,
+      "total_unique_users": 1217
+    },
+    {
+      "date": "2025-12-07T00:00:00",
+      "lending_users": 35,
+      "spot_users": 484,
+      "perp_users": 984,
+      "total_unique_users": 1447
+    },
+    {
+      "date": "2025-12-08T00:00:00",
+      "lending_users": 29,
+      "spot_users": 474,
+      "perp_users": 1205,
+      "total_unique_users": 1660
+    },
+    {
+      "date": "2025-12-09T00:00:00",
+      "lending_users": 35,
+      "spot_users": 580,
+      "perp_users": 1465,
+      "total_unique_users": 2008
+    },
+    {
+      "date": "2025-12-10T00:00:00",
+      "lending_users": 34,
+      "spot_users": 441,
+      "perp_users": 1039,
+      "total_unique_users": 1474
+    },
+    {
+      "date": "2025-12-11T00:00:00",
+      "lending_users": 37,
+      "spot_users": 451,
+      "perp_users": 986,
+      "total_unique_users": 1431
+    },
+    {
+      "date": "2025-12-12T00:00:00",
+      "lending_users": 37,
+      "spot_users": 384,
+      "perp_users": 920,
+      "total_unique_users": 1298
+    },
+    {
+      "date": "2025-12-13T00:00:00",
+      "lending_users": 21,
+      "spot_users": 299,
+      "perp_users": 641,
+      "total_unique_users": 935
+    },
+    {
+      "date": "2025-12-14T00:00:00",
+      "lending_users": 27,
+      "spot_users": 353,
+      "perp_users": 722,
+      "total_unique_users": 1075
+    },
+    {
+      "date": "2025-12-15T00:00:00",
+      "lending_users": 38,
+      "spot_users": 376,
+      "perp_users": 846,
+      "total_unique_users": 1223
+    },
+    {
+      "date": "2025-12-16T00:00:00",
+      "lending_users": 22,
+      "spot_users": 414,
+      "perp_users": 852,
+      "total_unique_users": 1254
+    },
+    {
+      "date": "2025-12-17T00:00:00",
+      "lending_users": 37,
+      "spot_users": 484,
+      "perp_users": 1012,
+      "total_unique_users": 1476
+    },
+    {
+      "date": "2025-12-18T00:00:00",
+      "lending_users": 34,
+      "spot_users": 479,
+      "perp_users": 1142,
+      "total_unique_users": 1603
+    },
+    {
+      "date": "2025-12-19T00:00:00",
+      "lending_users": 27,
+      "spot_users": 441,
+      "perp_users": 895,
+      "total_unique_users": 1324
+    },
+    {
+      "date": "2025-12-20T00:00:00",
+      "lending_users": 23,
+      "spot_users": 266,
+      "perp_users": 878,
+      "total_unique_users": 1139
+    },
+    {
+      "date": "2025-12-21T00:00:00",
+      "lending_users": 20,
+      "spot_users": 262,
+      "perp_users": 718,
+      "total_unique_users": 986
+    },
+    {
+      "date": "2025-12-22T00:00:00",
+      "lending_users": 20,
+      "spot_users": 255,
+      "perp_users": 933,
+      "total_unique_users": 1187
+    },
+    {
+      "date": "2025-12-23T00:00:00",
+      "lending_users": 18,
+      "spot_users": 228,
+      "perp_users": 1108,
+      "total_unique_users": 1327
+    },
+    {
+      "date": "2025-12-24T00:00:00",
+      "lending_users": 21,
+      "spot_users": 189,
+      "perp_users": 916,
+      "total_unique_users": 1098
+    },
+    {
+      "date": "2025-12-25T00:00:00",
+      "lending_users": 18,
+      "spot_users": 219,
+      "perp_users": 787,
+      "total_unique_users": 1000
+    },
+    {
+      "date": "2025-12-26T00:00:00",
+      "lending_users": 17,
+      "spot_users": 217,
+      "perp_users": 1055,
+      "total_unique_users": 1265
+    },
+    {
+      "date": "2025-12-27T00:00:00",
+      "lending_users": 18,
+      "spot_users": 232,
+      "perp_users": 807,
+      "total_unique_users": 1036
+    },
+    {
+      "date": "2025-12-28T00:00:00",
+      "lending_users": 17,
+      "spot_users": 277,
+      "perp_users": 778,
+      "total_unique_users": 1049
+    },
+    {
+      "date": "2025-12-29T00:00:00",
+      "lending_users": 24,
+      "spot_users": 404,
+      "perp_users": 1081,
+      "total_unique_users": 1477
+    },
+    {
+      "date": "2025-12-30T00:00:00",
+      "lending_users": 17,
+      "spot_users": 330,
+      "perp_users": 1010,
+      "total_unique_users": 1329
+    },
+    {
+      "date": "2025-12-31T00:00:00",
+      "lending_users": 20,
+      "spot_users": 400,
+      "perp_users": 834,
+      "total_unique_users": 1216
+    },
+    {
+      "date": "2026-01-01T00:00:00",
+      "lending_users": 22,
+      "spot_users": 303,
+      "perp_users": 648,
+      "total_unique_users": 936
+    },
+    {
+      "date": "2026-01-02T00:00:00",
+      "lending_users": 22,
+      "spot_users": 314,
+      "perp_users": 918,
+      "total_unique_users": 1199
+    },
+    {
+      "date": "2026-01-03T00:00:00",
+      "lending_users": 17,
+      "spot_users": 193,
+      "perp_users": 633,
+      "total_unique_users": 823
+    },
+    {
+      "date": "2026-01-04T00:00:00",
+      "lending_users": 20,
+      "spot_users": 263,
+      "perp_users": 737,
+      "total_unique_users": 971
+    },
+    {
+      "date": "2026-01-05T00:00:00",
+      "lending_users": 19,
+      "spot_users": 333,
+      "perp_users": 1108,
+      "total_unique_users": 1419
+    },
+    {
+      "date": "2026-01-06T00:00:00",
+      "lending_users": 18,
+      "spot_users": 337,
+      "perp_users": 1170,
+      "total_unique_users": 1475
+    },
+    {
+      "date": "2026-01-07T00:00:00",
+      "lending_users": 15,
+      "spot_users": 318,
+      "perp_users": 979,
+      "total_unique_users": 1258
+    },
+    {
+      "date": "2026-01-08T00:00:00",
+      "lending_users": 17,
+      "spot_users": 301,
+      "perp_users": 1070,
+      "total_unique_users": 1343
+    },
+    {
+      "date": "2026-01-09T00:00:00",
+      "lending_users": 26,
+      "spot_users": 296,
+      "perp_users": 1099,
+      "total_unique_users": 1376
+    },
+    {
+      "date": "2026-01-10T00:00:00",
+      "lending_users": 24,
+      "spot_users": 263,
+      "perp_users": 800,
+      "total_unique_users": 1052
+    },
+    {
+      "date": "2026-01-11T00:00:00",
+      "lending_users": 20,
+      "spot_users": 191,
+      "perp_users": 1107,
+      "total_unique_users": 1298
+    },
+    {
+      "date": "2026-01-12T00:00:00",
+      "lending_users": 60,
+      "spot_users": 353,
+      "perp_users": 2171,
+      "total_unique_users": 2528
+    },
+    {
+      "date": "2026-01-13T00:00:00",
+      "lending_users": 44,
+      "spot_users": 389,
+      "perp_users": 2368,
+      "total_unique_users": 2746
+    },
+    {
+      "date": "2026-01-14T00:00:00",
+      "lending_users": 35,
+      "spot_users": 344,
+      "perp_users": 2528,
+      "total_unique_users": 2852
+    },
+    {
+      "date": "2026-01-15T00:00:00",
+      "lending_users": 46,
+      "spot_users": 413,
+      "perp_users": 2352,
+      "total_unique_users": 2754
+    },
+    {
+      "date": "2026-01-16T00:00:00",
+      "lending_users": 50,
+      "spot_users": 306,
+      "perp_users": 1710,
+      "total_unique_users": 2022
+    },
+    {
+      "date": "2026-01-17T00:00:00",
+      "lending_users": 31,
+      "spot_users": 234,
+      "perp_users": 1318,
+      "total_unique_users": 1555
+    },
+    {
+      "date": "2026-01-18T00:00:00",
+      "lending_users": 46,
+      "spot_users": 253,
+      "perp_users": 1465,
+      "total_unique_users": 1728
+    },
+    {
+      "date": "2026-01-19T00:00:00",
+      "lending_users": 75,
+      "spot_users": 360,
+      "perp_users": 1883,
+      "total_unique_users": 2259
+    },
+    {
+      "date": "2026-01-20T00:00:00",
+      "lending_users": 68,
+      "spot_users": 432,
+      "perp_users": 1864,
+      "total_unique_users": 2289
+    },
+    {
+      "date": "2026-01-21T00:00:00",
+      "lending_users": 70,
+      "spot_users": 382,
+      "perp_users": 1714,
+      "total_unique_users": 2109
+    },
+    {
+      "date": "2026-01-22T00:00:00",
+      "lending_users": 51,
+      "spot_users": 333,
+      "perp_users": 1702,
+      "total_unique_users": 2041
+    },
+    {
+      "date": "2026-01-23T00:00:00",
+      "lending_users": 49,
+      "spot_users": 340,
+      "perp_users": 2082,
+      "total_unique_users": 2405
+    },
+    {
+      "date": "2026-01-24T00:00:00",
+      "lending_users": 45,
+      "spot_users": 315,
+      "perp_users": 1646,
+      "total_unique_users": 1949
+    },
+    {
+      "date": "2026-01-25T00:00:00",
+      "lending_users": 42,
+      "spot_users": 325,
+      "perp_users": 1608,
+      "total_unique_users": 1930
+    },
+    {
+      "date": "2026-01-26T00:00:00",
+      "lending_users": 54,
+      "spot_users": 368,
+      "perp_users": 1906,
+      "total_unique_users": 2281
+    },
+    {
+      "date": "2026-01-27T00:00:00",
+      "lending_users": 67,
+      "spot_users": 556,
+      "perp_users": 2414,
+      "total_unique_users": 2945
+    },
+    {
+      "date": "2026-01-28T00:00:00",
+      "lending_users": 82,
+      "spot_users": 722,
+      "perp_users": 2797,
+      "total_unique_users": 3484
+    },
+    {
+      "date": "2026-01-29T00:00:00",
+      "lending_users": 63,
+      "spot_users": 566,
+      "perp_users": 2907,
+      "total_unique_users": 3453
+    },
+    {
+      "date": "2026-01-30T00:00:00",
+      "lending_users": 53,
+      "spot_users": 623,
+      "perp_users": 2717,
+      "total_unique_users": 3310
+    },
+    {
+      "date": "2026-01-31T00:00:00",
+      "lending_users": 57,
+      "spot_users": 502,
+      "perp_users": 1875,
+      "total_unique_users": 2364
+    },
+    {
+      "date": "2026-02-01T00:00:00",
+      "lending_users": 46,
+      "spot_users": 571,
+      "perp_users": 1542,
+      "total_unique_users": 2100
+    },
+    {
+      "date": "2026-02-02T00:00:00",
+      "lending_users": 49,
+      "spot_users": 664,
+      "perp_users": 2200,
+      "total_unique_users": 2836
+    },
+    {
+      "date": "2026-02-03T00:00:00",
+      "lending_users": 60,
+      "spot_users": 747,
+      "perp_users": 2548,
+      "total_unique_users": 3274
+    },
+    {
+      "date": "2026-02-04T00:00:00",
+      "lending_users": 52,
+      "spot_users": 606,
+      "perp_users": 2389,
+      "total_unique_users": 2984
+    },
+    {
+      "date": "2026-02-05T00:00:00",
+      "lending_users": 26,
+      "spot_users": 471,
+      "perp_users": 1730,
+      "total_unique_users": 2182
+    }
+  ]
 }
