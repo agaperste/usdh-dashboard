@@ -494,7 +494,7 @@ export default function Dashboard() {
             <div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#8b5cf6' }}>📈 Perpetuals</h3>
               <p style={{ fontSize: '0.9rem', color: '#666', lineHeight: 1.6 }}>
-                Analyze USDH perpetual trading on HyperCore (Hyperliquid) across protocols (Felix, Kinetiq) and assets (SILVER, GOLD, S&P 500, etc.)
+                Analyze USDH perpetual trading on HyperCore (Hyperliquid) across protocols (Hyperliquid, Felix, Kinetiq, Ventuals) and assets (SILVER, GOLD, S&P 500, etc.)
               </p>
             </div>
           </div>
@@ -817,6 +817,7 @@ export default function Dashboard() {
                     <Bar dataKey="flx" stackId="a" fill="#ef4444" name="Felix Exchange (flx)" />
                     <Bar dataKey="km" stackId="a" fill="#0ea5e9" name="Markets by Kinetiq (km)" />
                     <Bar dataKey="vntl" stackId="a" fill="#8b5cf6" name="Ventuals (vntl)" />
+                    <Bar dataKey="null" stackId="a" fill="#64748b" name="Hyperliquid" />
                   </BarChart>
                 </ResponsiveContainer>
               ) : (
