@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 const ALLIUM_API_KEY = process.env.ALLIUM_API_KEY;
+// NOTE: This endpoint doesn't work - Allium requires saved query IDs
+// See ALLIUM_API_FIX.md for solutions
 const ALLIUM_EXPLORER_URL = 'https://api.allium.so/api/v1/explorer/queries/run';
 
 const DATA_DIR = path.join(__dirname, '../data');
