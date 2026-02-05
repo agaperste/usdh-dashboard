@@ -92,29 +92,30 @@ usdh-dashboard/
 
 ## Data Update Strategy
 
-### Automated Daily Refresh
+### On-Demand Refresh with Claude Code
 
-Dashboard data is **automatically updated daily at 23:00 UTC** via GitHub Actions. The workflow:
+Dashboard data is refreshed on-demand using Claude Code with Allium MCP integration.
 
-1. Fetches latest data from Allium's blockchain analytics platform
-2. Updates all JSON files in the `data/` directory
-3. Commits changes to the repository
-4. Vercel auto-deploys the updated dashboard
-
-### Manual Data Refresh
-
-To manually update the data:
+**To refresh data:**
 
 ```bash
-# Set your Allium API key
-export ALLIUM_API_KEY=your_api_key_here
-
-# Install dependencies (if not already done)
-npm install axios
-
-# Run the data fetch script
-node scripts/fetch-data.js
+cd usdh-dashboard
+claude
 ```
+
+Then ask Claude:
+> "Please refresh all dashboard data files by running the queries in queries.sql using mcp__allium__explorer_run_sql and saving results to data/"
+
+Claude will:
+1. Run all SQL queries via Allium MCP
+2. Update all JSON files in `data/` directory
+3. Process and format the data correctly
+
+**Why on-demand?**
+- Allium REST API requires pre-saved queries (can't POST raw SQL)
+- MCP integration allows running raw SQL directly
+- More flexible for development and quick updates
+- No complex automation setup needed
 
 ## Volume Insights (Last 30 Days)
 

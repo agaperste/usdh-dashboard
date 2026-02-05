@@ -739,15 +739,15 @@ export default function Dashboard() {
 
                     {/* Deposits (positive) */}
                     <Bar dataKey="morpho_blue_deposit" stackId="deposits" fill="#8b5cf6" name="Morpho Blue (Deposit)" />
-                    <Bar dataKey="hyperlend_deposit" stackId="deposits" fill="#3b82f6" name="HyperLend (Deposit)" />
-                    <Bar dataKey="hypurrfi_deposit" stackId="deposits" fill="#10b981" name="Hypurrfi (Deposit)" />
-                    <Bar dataKey="euler_deposit" stackId="deposits" fill="#f59e0b" name="Euler (Deposit)" />
+                    <Bar dataKey="hyperlend_deposit" stackId="deposits" fill="#4cd1a5" name="HyperLend (Deposit)" />
+                    <Bar dataKey="hypurrfi_deposit" stackId="deposits" fill="#3b82f6" name="Hypurrfi (Deposit)" />
+                    <Bar dataKey="euler_deposit" stackId="deposits" fill="#10b981" name="Euler (Deposit)" />
 
                     {/* Withdrawals (negative) */}
                     <Bar dataKey="morpho_blue_withdrawal" stackId="withdrawals" fill="#a78bfa" name="Morpho Blue (Withdrawal)" />
-                    <Bar dataKey="hyperlend_withdrawal" stackId="withdrawals" fill="#60a5fa" name="HyperLend (Withdrawal)" />
-                    <Bar dataKey="hypurrfi_withdrawal" stackId="withdrawals" fill="#34d399" name="Hypurrfi (Withdrawal)" />
-                    <Bar dataKey="euler_withdrawal" stackId="withdrawals" fill="#fbbf24" name="Euler (Withdrawal)" />
+                    <Bar dataKey="hyperlend_withdrawal" stackId="withdrawals" fill="#6ee7b7" name="HyperLend (Withdrawal)" />
+                    <Bar dataKey="hypurrfi_withdrawal" stackId="withdrawals" fill="#60a5fa" name="Hypurrfi (Withdrawal)" />
+                    <Bar dataKey="euler_withdrawal" stackId="withdrawals" fill="#34d399" name="Euler (Withdrawal)" />
                   </ComposedChart>
                 </ResponsiveContainer>
               ) : (
@@ -769,10 +769,10 @@ export default function Dashboard() {
                     <Tooltip formatter={(value: number) => formatCurrency(value)} />
                     <Legend />
                     <Line type="monotone" dataKey="morpho_blue_tvl" stroke="#8b5cf6" strokeWidth={2} name="Morpho Blue" dot={false} />
-                    <Line type="monotone" dataKey="hyperlend_tvl" stroke="#3b82f6" strokeWidth={2} name="HyperLend" dot={false} />
-                    <Line type="monotone" dataKey="hypurrfi_tvl" stroke="#10b981" strokeWidth={2} name="Hypurrfi" dot={false} />
-                    <Line type="monotone" dataKey="euler_tvl" stroke="#f59e0b" strokeWidth={2} name="Euler" dot={false} />
-                    <Line type="monotone" dataKey="total_tvl" stroke="#1a1a1a" strokeWidth={4} name="Total TVL" dot={false} strokeDasharray="5 5" />
+                    <Line type="monotone" dataKey="hyperlend_tvl" stroke="#4cd1a5" strokeWidth={2} name="HyperLend" dot={false} />
+                    <Line type="monotone" dataKey="hypurrfi_tvl" stroke="#3b82f6" strokeWidth={2} name="Hypurrfi" dot={false} />
+                    <Line type="monotone" dataKey="euler_tvl" stroke="#10b981" strokeWidth={2} name="Euler" dot={false} />
+                    <Line type="monotone" dataKey="total_tvl" stroke="#1C241C" strokeWidth={4} name="Total TVL" dot={false} strokeDasharray="5 5" />
                   </ComposedChart>
                 </ResponsiveContainer>
               ) : (
@@ -808,9 +808,9 @@ export default function Dashboard() {
                     <YAxis tickFormatter={formatCurrency} />
                     <Tooltip formatter={(value: number) => formatCurrency(value)} />
                     <Legend />
-                    <Bar dataKey="project_x" stackId="a" fill="#6366f1" name="Project X (Uniswap v3)" />
-                    <Bar dataKey="hybra_finance" stackId="a" fill="#ec4899" name="Hybra Finance (Uniswap v3)" />
-                    <Bar dataKey="hyperswap" stackId="a" fill="#f97316" name="HyperSwap (Uniswap v2/v3)" />
+                    <Bar dataKey="project_x" stackId="a" fill="#3b82f6" name="Project X (Uniswap v3)" />
+                    <Bar dataKey="hybra_finance" stackId="a" fill="#8b5cf6" name="Hybra Finance (Uniswap v3)" />
+                    <Bar dataKey="hyperswap" stackId="a" fill="#4cd1a5" name="HyperSwap (Uniswap v2/v3)" />
                   </BarChart>
                 </ResponsiveContainer>
               ) : (
@@ -1065,10 +1065,10 @@ export default function Dashboard() {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="lending_users" stroke="#10b981" name="Lending Users" strokeWidth={2} dot={false} />
+                    <Line type="monotone" dataKey="lending_users" stroke="#8b5cf6" name="Lending Users" strokeWidth={2} dot={false} />
                     <Line type="monotone" dataKey="spot_users" stroke="#3b82f6" name="Spot Trading Users" strokeWidth={2} dot={false} />
-                    <Line type="monotone" dataKey="perp_users" stroke="#8b5cf6" name="Perp Trading Users" strokeWidth={2} dot={false} />
-                    <Line type="monotone" dataKey="total_unique_users" stroke="#ef4444" name="Total Unique Users (Deduplicated)" strokeWidth={3} dot={false} strokeDasharray="5 5" />
+                    <Line type="monotone" dataKey="perp_users" stroke="#4cd1a5" name="Perp Trading Users" strokeWidth={2} dot={false} />
+                    <Line type="monotone" dataKey="total_unique_users" stroke="#1C241C" name="Total Unique Users (Deduplicated)" strokeWidth={3} dot={false} strokeDasharray="5 5" />
                   </LineChart>
                 </ResponsiveContainer>
               ) : (
