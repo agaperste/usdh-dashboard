@@ -1,0 +1,47 @@
+{
+  "transfer_activity_summary": {
+    "nov_early": {
+      "avg_transfers": 4000,
+      "avg_users": 700
+    },
+    "jan_peak": {
+      "max_transfers": 374776,
+      "max_users": 16950,
+      "date": "2026-02-01"
+    },
+    "total_days": 90
+  },
+  "dex_summary": {
+    "orca_total_volume": 450000000,
+    "raydium_total_volume": 250000000,
+    "usdc_pair_volume": 713395057,
+    "prime_pair_volume": 421281993,
+    "top_pairs": [
+      {
+        "token": "USDC",
+        "volume": 713395057,
+        "trades": 140928
+      },
+      {
+        "token": "PRIME",
+        "volume": 421281993,
+        "trades": 45627
+      }
+    ]
+  },
+  "lending_summary": {
+    "project": "kamino",
+    "peak_deposit_day": {
+      "date": "2025-11-07",
+      "volume_usd": 72407275,
+      "depositors": 195
+    },
+    "peak_withdrawal_day": {
+      "date": "2025-12-08",
+      "volume_usd": 45369871,
+      "withdrawers": 77
+    },
+    "total_depositors_90d": 6500,
+    "total_withdrawers_90d": 4200
+  }
+}
