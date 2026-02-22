@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mUSD Internal Reference - Wrapped M Token</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav id="sidebar">
+    <div class="nav-header">
+      <div class="logo">mUSD</div>
+      <div class="logo-sub">Wrapped M Token</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link active" data-section="hero"><span class="nav-dot"></span>Start</a></li>
+      <li><a href="#tldr" class="nav-link" data-section="tldr"><span class="nav-dot"></span>TLDR</a></li>
+      <li><a href="#how-it-works" class="nav-link" data-section="how-it-works"><span class="nav-dot"></span>How It Works</a></li>
+      <li><a href="#ceremony-sim" class="nav-link" data-section="ceremony-sim"><span class="nav-dot"></span>Simulate It</a></li>
+      <li><a href="#noise" class="nav-link" data-section="noise"><span class="nav-dot"></span>Noise Sources</a></li>
+      <li><a href="#contracts" class="nav-link" data-section="contracts"><span class="nav-dot"></span>Info Sheet</a></li>
+    </ul>
+  </nav>
+
+  <main id="content">
+    <!-- ==================== HERO ==================== -->
+    <section id="hero" class="section hero-section">
+      <div class="hero-content">
+        <div class="hero-title">mUSD</div>
+        <div class="hero-subtitle">On February 18th, Bridge's ledger recorded <strong>$0</strong> minted and <strong>$0</strong> burned for mUSD. Onchain, Ethereum showed <strong>$24.5 million</strong> minted and <strong>$24.5 million</strong> burned &mdash; plus <strong>$2,087</strong> in yield that appeared from nowhere. Same token. Same day. This is the story of why.</div>
+        <div class="hero-stats">
+          <div class="hero-stat-group">
+            <div class="hero-stat-group-label">Ledger (Feb 18)</div>
+            <div class="hero-stat-pair">
+              <div class="hero-stat">
+                <div class="hero-stat-value ledger-value">$0</div>
+                <div class="hero-stat-label">Minted</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-value ledger-value">$0</div>
+                <div class="hero-stat-label">Burned</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-stat-vs">vs</div>
+          <div class="hero-stat-group">
+            <div class="hero-stat-group-label">Onchain (Feb 18)</div>
+            <div class="hero-stat-pair">
+              <div class="hero-stat">
+                <div class="hero-stat-value onchain-value">$24.5M</div>
+                <div class="hero-stat-label">Minted</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-value onchain-value">$24.5M</div>
+                <div class="hero-stat-label">Burned</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-stat-group hero-stat-yield">
+            <div class="hero-stat-group-label">Net (yield)</div>
+            <div class="hero-stat">
+              <div class="hero-stat-value yield-value">+$2,087</div>
+              <div class="hero-stat-label">Phantom surplus</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-ctas">
+          <a href="#tldr" class="hero-cta">Walk me through it <span class="hero-cta-arrow">&rarr;</span></a>
+          <a href="#ceremony-sim" class="hero-cta hero-cta-alt">Try the simulator <span class="hero-cta-arrow">&rarr;</span></a>
+        </div>
+        <a href="#contracts" class="hero-skip">Skip to the info sheet &darr;</a>
+      </div>
+    </section>
+
+    <!-- ==================== TLDR ==================== -->
+    <section id="tldr" class="section">
+      <div class="section-header animate-in">
+        <h1>TLDR</h1>
+        <p class="subtitle">The 30-second version</p>
+      </div>
+
+      <div class="tldr-grid">
+        <div class="tldr-item animate-in">
+          <div class="tldr-number">1</div>
+          <div class="tldr-text">
+            <h3>mUSD wraps M0's M token</h3>
+            <p>Created by wrapping M tokens through M0 Protocol -- 5+ onchain transactions instead of one direct mint.</p>
+          </div>
+        </div>
+        <div class="tldr-item animate-in">
+          <div class="tldr-number">2</div>
+          <div class="tldr-text">
+            <h3>Anyone can wrap/unwrap</h3>
+            <p>Third parties independently wrap M into mUSD. Shows up onchain, doesn't exist in Bridge's ledger.</p>
+          </div>
+        </div>
+        <div class="tldr-item animate-in">
+          <div class="tldr-number">3</div>
+          <div class="tldr-text">
+            <h3>Cross-chain bridging creates phantom activity</h3>
+            <p>Relay.link moves mUSD between chains via burn-on-source, mint-on-destination. $3-25M/day in gross activity that nets to ~$0.</p>
+          </div>
+        </div>
+        <div class="tldr-item animate-in">
+          <div class="tldr-number">4</div>
+          <div class="tldr-text">
+            <h3>Yield accrual inflates onchain supply</h3>
+            <p>~$2K/day in new mUSD minted from M0's earning rate. Ledger doesn't track it -- ~$635-645K cumulative gap.</p>
+          </div>
+        </div>
+        <div class="tldr-item animate-in">
+          <div class="tldr-number">5</div>
+          <div class="tldr-text">
+            <h3>We whitelist Bridge wallets to reconcile</h3>
+            <p>Only count mints/burns involving Bridge's three wallets. Everything else is automatically excluded.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sim-teaser animate-in">
+        <div class="sim-teaser-text">
+          <h3>See it live</h3>
+          <p>Step through a real mint ceremony and watch onchain events pile up while the ledger records... one.</p>
+        </div>
+        <a href="#ceremony-sim" class="sim-teaser-btn">Launch Simulator &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ==================== HOW IT WORKS ==================== -->
+    <section id="how-it-works" class="section">
+      <div class="section-header animate-in">
+        <h1>How mUSD Works</h1>
+        <p class="subtitle">The M0 Protocol stack that mUSD is built on</p>
+      </div>
+
+      <div class="protocol-diagram animate-in">
+        <div class="protocol-layer layer-top">
+          <div class="protocol-box box-musd">
+            <div class="box-title">mUSD (Wrapped M Token)</div>
+            <div class="box-detail">ERC-20 on Ethereum, Linea, BSC</div>
+            <div class="box-detail"><a href="https://etherscan.io/token/0xacA92E438df0B2401fF60dA7E4337B687a2435DA" target="_blank" class="address-link">0xacA92E438df0B2401fF60dA7E4337B687a2435DA</a></div>
+          </div>
+        </div>
+        <div class="protocol-arrow">&#x2191; wrap() / unwrap() via <a href="https://etherscan.io/address/0x34f141dacb2def72d2196a473c585830af8b4004" target="_blank" class="address-link">Swap Facility</a> <span class="arrow-addr">(0x34f1...af8b)</span></div>
+        <div class="protocol-layer layer-mid">
+          <div class="protocol-box box-m">
+            <div class="box-title">M Token</div>
+            <div class="box-detail">M0 protocol's native token</div>
+            <div class="box-detail">Accrues yield via Earner Rate</div>
+            <div class="box-detail"><a href="https://etherscan.io/token/0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b" target="_blank" class="address-link">0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b</a></div>
+          </div>
+        </div>
+        <div class="protocol-arrow">&#x2191; mint() / burn() via <a href="https://etherscan.io/address/0x4edfcfb5f9e55962ef1a2eef0b56a8fadbaba289" target="_blank" class="address-link">Minter Gateway</a> <span class="arrow-addr">(0x4edf...a289)</span></div>
+        <div class="protocol-layer layer-bottom">
+          <div class="protocol-box box-collateral">
+            <div class="box-title">USTB &amp; USDC Reserves</div>
+            <div class="box-detail">Superstate USTB (yield-bearing) and USDC</div>
+            <div class="box-detail">Held in Fireblocks vaults, managed by Minters</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <div class="card animate-in">
+          <h3>Minters</h3>
+          <p>Approved entities (like Bridge) that pledge collateral and mint M tokens. Bridge's minter: <a href="https://etherscan.io/address/0xCD1394d24e1E404F9eB3609F872B0736bEcb9d74" target="_blank" class="address-link"><code>0xCD1394d24e1E404F9eB3609F872B0736bEcb9d74</code></a>.</p>
+        </div>
+        <div class="card animate-in">
+          <h3>Swap Facility</h3>
+          <p>M0 contract that converts between M and mUSD. <code>wrap()</code> deposits M, mints mUSD. <code>unwrap()</code> burns mUSD, returns M. 1:1 conversion.</p>
+        </div>
+        <div class="card animate-in">
+          <h3>Earner Rate</h3>
+          <p>M tokens accrue yield continuously. When wrapped as mUSD, yield accumulates in the WrappedMToken contract and is periodically claimed, minting new mUSD.</p>
+        </div>
+        <div class="card animate-in">
+          <h3>Mint Ratio</h3>
+          <p>Bridge mints with a ratio of <code>0.99</code> -- for every $1 of collateral, 0.99 M tokens are minted. Provides a buffer.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== INTERACTIVE CEREMONY SIMULATOR ==================== -->
+    <section id="ceremony-sim" class="section sim-section">
+      <div class="section-header animate-in">
+        <h1>Simulate the Ceremony</h1>
+        <p class="subtitle">Step through each transaction and watch how onchain events pile up</p>
+      </div>
+
+      <div class="sim-controls animate-in">
+        <div class="sim-mode-toggle">
+          <button class="sim-mode-btn active" data-mode="mint">Mint $750K to Linea</button>
+          <button class="sim-mode-btn" data-mode="burn">Burn $300K from BSC</button>
+        </div>
+        <button class="sim-reset-btn" id="sim-reset">Reset</button>
+      </div>
+
+      <div class="sim-main animate-in">
+        <!-- LEFT: Graph -->
+        <div class="sim-graph-wrap">
+          <div class="sim-graph">
+            <svg class="sim-graph-svg" viewBox="0 0 660 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect class="sim-layer-bg" x="3" y="3" width="654" height="90" rx="6" />
+              <rect class="sim-layer-bg" x="3" y="100" width="654" height="90" rx="6" />
+              <rect class="sim-layer-bg" x="3" y="198" width="654" height="98" rx="6" />
+              <text class="sim-layer-text" x="10" y="85">M0 Protocol</text>
+              <text class="sim-layer-text" x="10" y="183">Ethereum</text>
+              <text class="sim-layer-text" x="10" y="289" id="graph-dest-label">Destination</text>
+              <path class="sim-edge" id="edge-1" d="M 162,39 C 190,30 220,48 248,39" />
+              <path class="sim-edge" id="edge-2" d="M 396,39 C 424,30 454,48 482,39" />
+              <path class="sim-edge" id="edge-3" d="M 556,64 C 550,82 562,100 556,118" />
+              <path class="sim-edge" id="edge-4" d="M 556,168 C 550,186 562,204 556,222" />
+              <path class="sim-edge" id="edge-5" d="M 482,247 C 454,238 424,256 396,247" />
+              <path class="sim-edge" id="edge-6" d="M 248,247 C 220,238 190,256 162,247" />
+            </svg>
+            <div class="sim-node node-r1 node-c1" id="sim-collateral">
+              <div class="sim-node-label">USTB Reserves</div>
+              <div class="sim-node-sub">Fireblocks Vault</div>
+              <div class="sim-node-bal" id="bal-collateral"></div>
+            </div>
+            <div class="sim-node node-r1 node-c2" id="sim-minter-gw">
+              <div class="sim-node-label">Minter Gateway</div>
+              <div class="sim-node-sub">0x4edf...a289</div>
+            </div>
+            <div class="sim-node node-r1 node-c3" id="sim-m-token">
+              <div class="sim-node-label">M Token</div>
+              <div class="sim-node-bal" id="bal-m"></div>
+            </div>
+            <div class="sim-node node-r2 node-c3" id="sim-swap">
+              <div class="sim-node-label">Swap Facility</div>
+              <div class="sim-node-sub">0x34f1...af8b</div>
+            </div>
+            <div class="sim-node node-r3 node-c3" id="sim-musd-eth">
+              <div class="sim-node-label">mUSD (ETH)</div>
+              <div class="sim-node-bal" id="bal-musd-eth"></div>
+            </div>
+            <div class="sim-node node-r3 node-c2" id="sim-bridge-relay">
+              <div class="sim-node-label">relay.link</div>
+              <div class="sim-node-sub">0xf70d...dbef</div>
+            </div>
+            <div class="sim-node node-r3 node-c1" id="sim-musd-dest">
+              <div class="sim-node-label" id="dest-chain-label">mUSD (Linea)</div>
+              <div class="sim-node-bal" id="bal-musd-dest"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Panel -->
+        <div class="sim-panel">
+          <div class="sim-scoreboard">
+            <div class="score-col score-onchain">
+              <div class="score-label">Onchain</div>
+              <div class="score-row"><span class="score-mints">Mints: <span id="score-onchain-mints">0</span></span> <span class="score-burns">Burns: <span id="score-onchain-burns">0</span></span></div>
+              <div class="score-net">Net: <span id="score-onchain-net">$0</span></div>
+            </div>
+            <div class="score-col score-ledger">
+              <div class="score-label">Ledger</div>
+              <div class="score-row"><span class="score-mints">Mints: <span id="score-ledger-mints">0</span></span> <span class="score-burns">Burns: <span id="score-ledger-burns">0</span></span></div>
+              <div class="score-net">Net: <span id="score-ledger-net">$0</span></div>
+            </div>
+          </div>
+
+          <div class="sim-steps" id="sim-steps"></div>
+
+          <div class="sim-nav">
+            <button class="sim-btn sim-btn-prev" id="sim-prev" disabled>Back</button>
+            <span class="sim-progress" id="sim-progress">Step 0 / 6</span>
+            <button class="sim-btn sim-btn-next" id="sim-next">Start</button>
+          </div>
+
+          <div class="sim-takeaway" id="sim-punchline" style="display:none;">
+            <div class="sim-takeaway-label">Takeaway</div>
+            <h4 id="punchline-title"></h4>
+            <p id="punchline-text"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NOISE SOURCES (merged cross-chain + yield) ==================== -->
+    <section id="noise" class="section">
+      <div class="section-header animate-in">
+        <h1>Why the Numbers Don't Match</h1>
+        <p class="subtitle">Two noise sources dominate mUSD's onchain data</p>
+      </div>
+
+      <div class="card highlight-card danger-card animate-in">
+        <div class="card-icon">&#x1F6A8;</div>
+        <div class="card-content">
+          <h3>#1: Cross-Chain Bridging (99%+ of noise)</h3>
+          <p>Relay.link moves mUSD between Ethereum, Linea, and BSC by burning on source and minting on destination. On Feb 18, this generated $24.5M in gross mints and $24.5M in gross burns -- zero net impact on supply.</p>
+        </div>
+      </div>
+
+      <div class="bridge-math-card animate-in">
+        <h4>The Double-Counting Problem</h4>
+        <p>Bridging $1M mUSD from Ethereum to Linea:</p>
+        <table class="math-table">
+          <tr><th></th><th>Ethereum</th><th>Linea</th><th>Aggregate</th></tr>
+          <tr><td>Mints</td><td>$0</td><td>+$1M</td><td class="highlight-cell">+$1M</td></tr>
+          <tr><td>Burns</td><td>-$1M</td><td>$0</td><td class="highlight-cell">-$1M</td></tr>
+          <tr><td>Net</td><td>-$1M</td><td>+$1M</td><td class="zero-cell">$0</td></tr>
+        </table>
+        <p class="text-muted">Dozens of these per day at varying amounts = $24.5M gross mints + $24.5M gross burns on Feb 18. Supply unchanged.</p>
+      </div>
+
+      <h3 class="animate-in">Real Data: Feb 18, 2026</h3>
+      <div class="data-table-wrapper animate-in">
+        <table class="data-table">
+          <thead>
+            <tr><th>Source</th><th>Mints</th><th>Burns</th><th>Net</th><th>% of Total</th></tr>
+          </thead>
+          <tbody>
+            <tr class="row-highlight">
+              <td>Relay.link Bridge</td><td>$24,501,858</td><td>-$24,501,858</td><td>$0</td><td>99.99%</td>
+            </tr>
+            <tr>
+              <td>M0 Yield</td><td>$2,087</td><td>$0</td><td>+$2,087</td><td>0.004%</td>
+            </tr>
+            <tr>
+              <td>Bridge Wallets</td><td>$0</td><td>$0</td><td>$0</td><td>0%</td>
+            </tr>
+            <tr class="row-total">
+              <td>Total Onchain</td><td>$24,503,945</td><td>-$24,501,858</td><td>+$2,087</td><td>100%</td>
+            </tr>
+            <tr class="row-ledger">
+              <td>Bridge Ledger</td><td>$0</td><td>$0</td><td>$0</td><td>--</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card highlight-card animate-in" style="border-left-color: var(--accent-orange);">
+        <div class="card-icon">&#x1F4C8;</div>
+        <div class="card-content">
+          <h3>#2: Yield Accrual (~$2K/day)</h3>
+          <p>M0's earning rate continuously generates new mUSD minted from the zero address to <a href="https://etherscan.io/address/0x4177a5287fae4767311dad02547b57d1b8cf5fbf" target="_blank" class="address-link"><code>0x4177...5fbf</code></a>. The ledger doesn't track this, creating a cumulative ~<strong>$635-645K</strong> supply gap. This is why mUSD's reserve ratio shows ~1.03.</p>
+        </div>
+      </div>
+
+      <div class="yield-numbers animate-in">
+        <h3>Daily Yield Mints (Feb 12-18, 2026)</h3>
+        <div class="yield-bars">
+          <div class="yield-bar" style="--bar-width: 100%"><span class="bar-label">Feb 18</span><span class="bar-value">$2,087</span></div>
+          <div class="yield-bar" style="--bar-width: 99.8%"><span class="bar-label">Feb 17</span><span class="bar-value">$2,092</span></div>
+          <div class="yield-bar" style="--bar-width: 98.3%"><span class="bar-label">Feb 16</span><span class="bar-value">$2,053</span></div>
+          <div class="yield-bar" style="--bar-width: 98.3%"><span class="bar-label">Feb 15</span><span class="bar-value">$2,054</span></div>
+          <div class="yield-bar" style="--bar-width: 98.3%"><span class="bar-label">Feb 14</span><span class="bar-value">$2,052</span></div>
+          <div class="yield-bar" style="--bar-width: 97.8%"><span class="bar-label">Feb 13</span><span class="bar-value">$2,044</span></div>
+          <div class="yield-bar" style="--bar-width: 97.5%"><span class="bar-label">Feb 12</span><span class="bar-value">$2,038</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== INFO SHEET ==================== -->
+    <section id="contracts" class="section">
+      <div class="section-header animate-in">
+        <h1>Info Sheet</h1>
+        <p class="subtitle">Contracts, addresses, and codebase references</p>
+      </div>
+
+      <h3 class="animate-in">Token Contracts</h3>
+      <div class="address-table-wrapper animate-in">
+        <table class="address-table">
+          <thead><tr><th>Name</th><th>Address</th><th>Chain(s)</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>mUSD (Wrapped M Token)</td>
+              <td><a href="https://etherscan.io/token/0xacA92E438df0B2401fF60dA7E4337B687a2435DA" target="_blank" class="address-link"><code>0xacA92E438df0B2401fF60dA7E4337B687a2435DA</code></a></td>
+              <td>Ethereum, Linea, BSC</td>
+            </tr>
+            <tr>
+              <td>M Token (M0 native)</td>
+              <td><a href="https://etherscan.io/token/0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b" target="_blank" class="address-link"><code>0x866A2BF4E572CbcF37D5071A7a58503Bfb36be1b</code></a></td>
+              <td>Ethereum</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="animate-in">M0 Protocol Contracts</h3>
+      <div class="address-table-wrapper animate-in">
+        <table class="address-table">
+          <thead><tr><th>Name</th><th>Address</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Minter Gateway</td>
+              <td><a href="https://etherscan.io/address/0x4edfcfb5f9e55962ef1a2eef0b56a8fadbaba289" target="_blank" class="address-link"><code>0x4edfcfb5f9e55962ef1a2eef0b56a8fadbaba289</code></a></td>
+              <td>Mint/burn M tokens (collateral-backed)</td>
+            </tr>
+            <tr>
+              <td>Swap Facility</td>
+              <td><a href="https://etherscan.io/address/0x34f141dacb2def72d2196a473c585830af8b4004" target="_blank" class="address-link"><code>0x34f141dacb2def72d2196a473c585830af8b4004</code></a></td>
+              <td>wrap(M&rarr;mUSD) and unwrap(mUSD&rarr;M)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="animate-in">Bridge Addresses (Whitelist)</h3>
+      <div class="address-table-wrapper animate-in">
+        <table class="address-table">
+          <thead><tr><th>Name</th><th>Address</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Bridge Minter</td>
+              <td><a href="https://etherscan.io/address/0xCD1394d24e1E404F9eB3609F872B0736bEcb9d74" target="_blank" class="address-link"><code>0xCD1394d24e1E404F9eB3609F872B0736bEcb9d74</code></a></td>
+              <td>Bridge's registered M0 minter</td>
+            </tr>
+            <tr>
+              <td>mUSD Inventory</td>
+              <td><a href="https://etherscan.io/address/0x658296580185cf5f78ff6d33045ac965efdd7118" target="_blank" class="address-link"><code>0x658296580185cf5f78ff6d33045ac965efdd7118</code></a></td>
+              <td>Bridge's mUSD holding wallet</td>
+            </tr>
+            <tr>
+              <td>mUSD Staging</td>
+              <td><a href="https://etherscan.io/address/0x98F2b37A1F5e6dB22c4eBa7DE0398fB9be2AF03F" target="_blank" class="address-link"><code>0x98F2b37A1F5e6dB22c4eBa7DE0398fB9be2AF03F</code></a></td>
+              <td>Staging wallet for operations</td>
+            </tr>
+            <tr>
+              <td>M Staging</td>
+              <td><a href="https://etherscan.io/address/0xdFd3723A63c889f512Cf6e460d79fCFe50AD6cDb" target="_blank" class="address-link"><code>0xdFd3723A63c889f512Cf6e460d79fCFe50AD6cDb</code></a></td>
+              <td>M token intermediary -- receives minted M (not mUSD) then swaps to mUSD. Not in whitelist because it never touches mUSD from/to 0x0000.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="animate-in">Noise Addresses (Auto-Excluded)</h3>
+      <div class="address-table-wrapper animate-in">
+        <table class="address-table">
+          <thead><tr><th>Name</th><th>Address</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr class="row-excluded">
+              <td>Relay.link Relayer</td>
+              <td><a href="https://etherscan.io/address/0xf70da97812cb96acdf810712aa562db8dfa3dbef" target="_blank" class="address-link"><code>0xf70da97812cb96acdf810712aa562db8dfa3dbef</code></a></td>
+              <td>Receives minted mUSD on destination chain ($3-25M/day)</td>
+            </tr>
+            <tr class="row-excluded">
+              <td>Relay.link Contract</td>
+              <td><a href="https://etherscan.io/address/0xb6807116b3b1b321a390594e31ecd6e0076f6278" target="_blank" class="address-link"><code>0xb6807116b3b1b321a390594e31ecd6e0076f6278</code></a></td>
+              <td>Burns mUSD on source chain</td>
+            </tr>
+            <tr class="row-noted">
+              <td>Yield Distribution</td>
+              <td><a href="https://etherscan.io/address/0x4177a5287fae4767311dad02547b57d1b8cf5fbf" target="_blank" class="address-link"><code>0x4177a5287fae4767311dad02547b57d1b8cf5fbf</code></a></td>
+              <td>Receives ~$2K/day in minted yield</td>
+            </tr>
+            <tr class="row-noted">
+              <td>Swap Facility</td>
+              <td><a href="https://etherscan.io/address/0x34f141dacb2def72d2196a473c585830af8b4004" target="_blank" class="address-link"><code>0x34f141dacb2def72d2196a473c585830af8b4004</code></a></td>
+              <td>Third-party M/mUSD wraps pass through here</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="animate-in">Codebase References</h3>
+      <div class="address-table-wrapper animate-in">
+        <table class="address-table">
+          <thead><tr><th>File</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><code>packs/issuance/app/public/issuance/currency_config/musd.rb</code></td>
+              <td>mUSD currency configuration</td>
+            </tr>
+            <tr>
+              <td><code>packs/issuance/app/domain/issuance/m0.rb</code></td>
+              <td>M0 module config (chains, mint ratio, etc.)</td>
+            </tr>
+            <tr>
+              <td><code>packs/issuance/app/domain/issuance/m0/operations/mint_ceremony_op.rb</code></td>
+              <td>Multi-step mint state machine</td>
+            </tr>
+            <tr>
+              <td><code>packs/issuance/app/domain/issuance/m0/operations/burn_and_retrieve_op.rb</code></td>
+              <td>Multi-step burn state machine</td>
+            </tr>
+            <tr>
+              <td><code>packs/issuance/app/domain/issuance/m0/smart_contracts/wrapped_m_token.rb</code></td>
+              <td>WrappedMToken contract interface</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
