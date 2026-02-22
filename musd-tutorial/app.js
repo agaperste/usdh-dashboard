@@ -100,9 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const MINT_STEPS = [
     {
       title: 'Prepare Collateral',
-      desc: 'Convert $750K of reserve USDC into USTB (Superstate yield-bearing token) to ensure sufficient collateral for the mint. USTB and USDC are the onchain collateral backing M.',
+      desc: 'USD from LeadBank FBO account is converted to USDC (via Coinbase), then USDC is atomically swapped to USTB (Superstate yield-bearing token) on Ethereum. USTB is the onchain collateral backing M.',
       tags: ['onchain'],
-      transfer: 'ReservesRebalanceOp: USDC \u2192 USTB via Superstate',
+      transfer: 'ReservesRebalanceOp: Bank USD \u2192 USDC (Coinbase) \u2192 USTB (Superstate atomic swap)',
       entities: ['sim-collateral'],
       edges: [],
       balances: { collateral: '-$750K', m: '', 'musd-eth': '', 'musd-dest': '' },
