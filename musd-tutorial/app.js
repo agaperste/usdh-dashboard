@@ -99,10 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================== CEREMONY SIMULATOR ====================
   const MINT_STEPS = [
     {
-      title: 'Rebalance USTB Collateral',
-      desc: 'Move $750K of USTB (Superstate yield-bearing token) from M reserves to mUSD reserves via Fireblocks. USTB and USDC are the actual onchain collateral backing M.',
+      title: 'Prepare Collateral',
+      desc: 'Convert $750K of reserve USDC into USTB (Superstate yield-bearing token) to ensure sufficient collateral for the mint. USTB and USDC are the onchain collateral backing M.',
       tags: ['onchain'],
-      transfer: 'USTB transferred between Fireblocks vault accounts (M reserves \u2192 mUSD reserves)',
+      transfer: 'ReservesRebalanceOp: USDC \u2192 USTB via Superstate',
       entities: ['sim-collateral'],
       edges: [],
       balances: { collateral: '-$750K', m: '', 'musd-eth': '', 'musd-dest': '' },
@@ -201,10 +201,10 @@ document.addEventListener('DOMContentLoaded', () => {
       ledger: { mints: 0, burns: 0 },
     },
     {
-      title: 'Retrieve USTB Reserves',
-      desc: 'Retrieve USTB collateral from M0. USTB moved back from mUSD reserves to M reserves via Fireblocks.',
+      title: 'Retrieve Collateral',
+      desc: 'Propose collateral retrieval from M0 protocol and convert USTB back to USDC reserves.',
       tags: ['onchain'],
-      transfer: 'USTB transferred between Fireblocks vault accounts (mUSD reserves \u2192 M reserves)',
+      transfer: 'RetrievalOp: proposeRetrieval() on Minter Gateway, then USTB \u2192 USDC',
       entities: ['sim-minter-gw', 'sim-collateral'],
       edges: [-1],
       balances: { collateral: '+$300K', m: '$0', 'musd-eth': '$0', 'musd-dest': '-$300K' },
