@@ -202,9 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       title: 'Retrieve Collateral',
-      desc: 'Propose collateral retrieval from M0 protocol and convert USTB back to USDC reserves.',
+      desc: 'Propose collateral retrieval from M0, then convert USTB back to USDC via Superstate atomic swap. USDC lands in Fireblocks liquidity. Ops can then pull USDC out to LeadBank FBO if needed.',
       tags: ['onchain'],
-      transfer: 'RetrievalOp: proposeRetrieval() on Minter Gateway, then USTB \u2192 USDC',
+      transfer: 'RetrievalOp: proposeRetrieval() on Minter Gateway \u2192 USTB \u2192 USDC (Superstate) \u2192 Fireblocks USDC liquidity',
       entities: ['sim-minter-gw', 'sim-collateral'],
       edges: [-1],
       balances: { collateral: '+$300K', m: '$0', 'musd-eth': '$0', 'musd-dest': '-$300K' },
