@@ -1,0 +1,21 @@
+{
+  "name": "eu-wallet-custody-blast-radius",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3003",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "^20.19.31",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "next": "^13.5.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^3.7.0",
+    "typescript": "^5.9.3"
+  }
+}
