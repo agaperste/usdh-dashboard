@@ -126,10 +126,13 @@ const enriched = developerImpact
   }));
 
 // By absolute impact to Bridge (sorted by EU balance share of Bridge total)
-const topByAbsolute = [...enriched].sort((a, b) => b.balShareOfBridge - a.balShareOfBridge).slice(0, 10);
+const topByAbsolute = [...enriched].sort((a, b) => Math.max(b.balShareOfBridge, b.volShareOfBridge) - Math.max(a.balShareOfBridge, a.volShareOfBridge)).slice(0, 10);
 
 // By proportional risk to developer (sorted by max % EU across any metric)
-const topByProportion = [...enriched].sort((a, b) => b.maxRiskPct - a.maxRiskPct).slice(0, 10);
+// Filtered to developers with >$10K in EU balance or volume to exclude negligible accounts
+const topByProportion = [...enriched]
+  .filter(d => d.cust_eu_balance > 10000 || d.cust_eu_volume > 10000)
+  .sort((a, b) => b.maxRiskPct - a.maxRiskPct);
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (!active || !payload) return null;
@@ -210,9 +213,10 @@ export default function Dashboard() {
       {/* Developers to watch callout */}
       <div className="callout">
         <strong>Developers requiring closest attention:</strong>{' '}
-        <strong style={{ color: '#ef4444' }}>OneSafe</strong> (holds 58% of all EU balance at $812K &mdash; by far the largest single-developer impact to Bridge),{' '}
-        <strong style={{ color: '#ef4444' }}>Sauki</strong> (98% of their 1,032 customers are EU-only &mdash; almost entirely an EU business),{' '}
-        and <strong style={{ color: '#ef4444' }}>Moneco</strong> (broadest customer reach with 1,728 EU customers and 17% of their volume from EU).
+        <strong style={{ color: '#ef4444' }}>OneSafe</strong> (58% of all Bridge EU balance at $812K),{' '}
+        <strong style={{ color: '#ef4444' }}>Wayex Global</strong> (81% of their volume is EU, representing 18% of Bridge&apos;s total EU volume),{' '}
+        <strong style={{ color: '#ef4444' }}>Sauki</strong> (98% of 1,032 customers are EU-only &mdash; the largest developer with near-total EU dependency),{' '}
+        and <strong style={{ color: '#ef4444' }}>Moneco</strong> (1,728 EU customers &mdash; 38% of all Bridge EU customers).
         See <a href="#top-developers" style={{ color: '#3b82f6' }}>detailed analysis below</a>.
       </div>
 
@@ -260,29 +264,37 @@ export default function Dashboard() {
         </p>
 
         {/* Highlight cards - with clear reasoning */}
-        <div className="chart-row" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+        <div className="chart-row" style={{ gridTemplateColumns: '1fr 1fr 1fr 1fr' }}>
           <div className="summary-card risk">
-            <div className="label">Highest Impact to Bridge</div>
+            <div className="label">Highest Balance Impact</div>
             <div className="value" style={{ fontSize: '1.25rem' }}>OneSafe</div>
             <div className="sub">
-              Holds 58% of all Bridge EU balance ($812K of $1.39M total).
-              EU is only 13% of their own business, but they alone represent most of Bridge&apos;s EU custody exposure.
+              58% of all Bridge EU balance ($812K of $1.39M).
+              EU is only 13% of their business, but they alone hold most of Bridge&apos;s EU custody exposure.
             </div>
           </div>
           <div className="summary-card risk">
-            <div className="label">Highest Risk to Developer</div>
+            <div className="label">Highest Volume Concentration</div>
+            <div className="value" style={{ fontSize: '1.25rem' }}>Wayex Global</div>
+            <div className="sub">
+              81% of their volume is EU ($1.6M), representing 18% of Bridge&apos;s total EU volume.
+              Only 14% of customers are EU &mdash; a few large EU customers drive outsized volume.
+            </div>
+          </div>
+          <div className="summary-card risk">
+            <div className="label">Most EU-Dependent at Scale</div>
             <div className="value" style={{ fontSize: '1.25rem' }}>Sauki Inc</div>
             <div className="sub">
-              97.9% of their 1,032 customers are EU-only with $1M EU volume (48% of their total).
-              Custody disruption would affect nearly their entire user base.
+              98% of 1,032 customers are EU-only, with $1M EU volume (48% of total).
+              Many small devs are 100% EU, but Sauki is the largest with near-total EU dependency.
             </div>
           </div>
           <div className="summary-card risk">
             <div className="label">Broadest Customer Reach</div>
             <div className="value" style={{ fontSize: '1.25rem' }}>Moneco</div>
             <div className="sub">
-              1,728 EU customers (most of any developer, 38% of all Bridge EU customers).
-              19% of their business and $670K EU volume &mdash; significant on both dimensions.
+              1,728 EU customers (38% of all Bridge EU customers).
+              19% of their business and $670K EU volume &mdash; most end-users affected.
             </div>
           </div>
         </div>
@@ -290,20 +302,23 @@ export default function Dashboard() {
         {/* Absolute impact to Bridge table */}
         <h3 style={{ fontSize: '0.9rem', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#a3a3a3' }}>
           By Impact to Bridge
-          <span style={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: '0.5rem' }}>(what share of Bridge&apos;s total EU exposure each developer represents, sorted by EU balance share)</span>
+          <span style={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: '0.5rem' }}>(what share of Bridge&apos;s total EU exposure each developer represents, sorted by max of balance or volume share)</span>
         </h3>
-        <div className="table-container">
+        <div className="table-container" style={{ overflowX: 'auto' }}>
           <table>
             <thead>
               <tr>
                 <th>Developer</th>
-                <th className="num">EU Balance</th>
-                <th className="num">% of Bridge EU Bal</th>
-                <th className="num">EU Volume</th>
-                <th className="num">% of Bridge EU Vol</th>
-                <th className="num">EU Customers</th>
-                <th>Impact</th>
-                <th>Risk</th>
+                <th className="num">EU Bal</th>
+                <th className="num col-bridge">% of Bridge</th>
+                <th className="num col-dev">% of Dev</th>
+                <th className="num">EU Vol</th>
+                <th className="num col-bridge">% of Bridge</th>
+                <th className="num col-dev">% of Dev</th>
+                <th className="num">EU Cust</th>
+                <th className="num col-dev">% of Dev</th>
+                <th className="col-bridge">Impact</th>
+                <th className="col-dev">Risk</th>
               </tr>
             </thead>
             <tbody>
@@ -315,12 +330,15 @@ export default function Dashboard() {
                   <tr key={i}>
                     <td><strong>{d.developer_name}</strong></td>
                     <td className="num">{fmtUsd(d.cust_eu_balance)}</td>
-                    <td className={`num ${impactClass(d.balShareOfBridge)}`}>{d.balShareOfBridge.toFixed(1)}%</td>
+                    <td className={`num col-bridge ${impactClass(d.balShareOfBridge)}`}>{d.balShareOfBridge.toFixed(1)}%</td>
+                    <td className={`num col-dev ${pctClass(d.pct_bal_custody_eu)}`}>{d.pct_bal_custody_eu != null ? `${d.pct_bal_custody_eu}%` : '-'}</td>
                     <td className="num">{fmtUsd(d.cust_eu_volume)}</td>
-                    <td className={`num ${impactClass(d.volShareOfBridge)}`}>{d.volShareOfBridge.toFixed(1)}%</td>
+                    <td className={`num col-bridge ${impactClass(d.volShareOfBridge)}`}>{d.volShareOfBridge.toFixed(1)}%</td>
+                    <td className={`num col-dev ${pctClass(d.pct_vol_custody_eu)}`}>{d.pct_vol_custody_eu != null ? `${d.pct_vol_custody_eu}%` : '-'}</td>
                     <td className="num">{fmt(d.cust_eu_customers)}</td>
-                    <td><span className={`badge ${impact.cls}`}>{impact.label}</span></td>
-                    <td><span className={`badge ${risk.cls}`}>{risk.label}</span></td>
+                    <td className={`num col-dev ${pctClass(d.pct_cust_custody_eu)}`}>{d.pct_cust_custody_eu != null ? `${d.pct_cust_custody_eu}%` : '-'}</td>
+                    <td className="col-bridge"><span className={`badge ${impact.cls}`}>{impact.label}</span></td>
+                    <td className="col-dev"><span className={`badge ${risk.cls}`}>{risk.label}</span></td>
                   </tr>
                 );
               })}
@@ -331,7 +349,7 @@ export default function Dashboard() {
         {/* Proportional risk to developer table */}
         <h3 style={{ fontSize: '0.9rem', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#a3a3a3' }}>
           By Risk to Developer
-          <span style={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: '0.5rem' }}>(what % of each developer&apos;s own business is EU, sorted by highest % across any metric)</span>
+          <span style={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: '0.5rem' }}>(what % of each developer&apos;s own business is EU, filtered to &gt;$10K EU balance or volume, sorted by highest %)</span>
         </h3>
         <div className="table-container">
           <table>

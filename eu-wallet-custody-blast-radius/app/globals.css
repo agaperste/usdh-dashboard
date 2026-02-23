@@ -400,6 +400,31 @@ thead th.sortable.sort-active .sort-arrow {
   color: var(--accent);
 }
 
+/* Column group tinting - Bridge vs Developer lens */
+thead th.col-bridge {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+thead th.col-dev {
+  background: rgba(249, 115, 22, 0.15);
+}
+
+tbody td.col-bridge {
+  background: rgba(59, 130, 246, 0.05);
+}
+
+tbody td.col-dev {
+  background: rgba(249, 115, 22, 0.05);
+}
+
+tbody tr:hover td.col-bridge {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+tbody tr:hover td.col-dev {
+  background: rgba(249, 115, 22, 0.1);
+}
+
 /* Section divider */
 .section-divider {
   border: none;
