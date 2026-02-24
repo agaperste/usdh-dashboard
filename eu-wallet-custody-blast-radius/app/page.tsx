@@ -459,7 +459,7 @@ export default function Dashboard() {
               <YAxis stroke="#737373" fontSize={12} tickFormatter={v => `${v}%`} />
               <Tooltip
                 contentStyle={{ background: '#1a1a1a', border: '1px solid #333', borderRadius: 6, fontSize: '0.8rem' }}
-                formatter={(v: number) => `${v.toFixed(2)}%`}
+                formatter={(v: number | undefined) => v != null ? `${v.toFixed(2)}%` : '-'}
               />
               <Legend />
               <Line type="monotone" dataKey="Domicile EU %" stroke={COLORS.domicile} strokeWidth={2} dot={{ r: 4 }} />
