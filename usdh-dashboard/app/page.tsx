@@ -483,6 +483,10 @@ export default function Dashboard() {
           <a href="#users" style={{ fontSize: '0.9rem', color: '#666', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f3f4f6'; e.currentTarget.style.color = '#1a1a1a' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#666' }}>
             👥 Users
           </a>
+          <span style={{ color: '#d0d0d0' }}>|</span>
+          <a href="/asian-market-analysis" style={{ fontSize: '0.9rem', color: '#8b5cf6', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', border: '1px solid #8b5cf6', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#8b5cf6'; e.currentTarget.style.color = '#fff' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#8b5cf6' }}>
+            🌏 Asian Market Analysis
+          </a>
         </div>
       </nav>
 

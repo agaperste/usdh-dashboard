@@ -1,0 +1,81 @@
+{
+  "hourly_volume_30d": [
+    {"hour_utc": 0, "volume_usd": 110338681, "trade_count": 146540, "unique_traders": 3990, "label": "Asia AM"},
+    {"hour_utc": 1, "volume_usd": 120864754, "trade_count": 175931, "unique_traders": 4401, "label": "Asia AM peak"},
+    {"hour_utc": 2, "volume_usd": 109076177, "trade_count": 139406, "unique_traders": 3647, "label": "Asia mid-AM"},
+    {"hour_utc": 3, "volume_usd": 79100857, "trade_count": 124739, "unique_traders": 3764, "label": "Asia late AM"},
+    {"hour_utc": 4, "volume_usd": 65887112, "trade_count": 105837, "unique_traders": 3402, "label": "Asia noon"},
+    {"hour_utc": 5, "volume_usd": 62344602, "trade_count": 103525, "unique_traders": 3307, "label": "Asia PM"},
+    {"hour_utc": 6, "volume_usd": 75695261, "trade_count": 118371, "unique_traders": 3610, "label": "Asia PM / EU open"},
+    {"hour_utc": 7, "volume_usd": 64684600, "trade_count": 111568, "unique_traders": 3634, "label": "EU AM"},
+    {"hour_utc": 8, "volume_usd": 80650201, "trade_count": 136633, "unique_traders": 4041, "label": "EU AM"},
+    {"hour_utc": 9, "volume_usd": 95679262, "trade_count": 154372, "unique_traders": 4263, "label": "EU mid-AM"},
+    {"hour_utc": 10, "volume_usd": 61668683, "trade_count": 120709, "unique_traders": 3846, "label": "EU midday"},
+    {"hour_utc": 11, "volume_usd": 65425826, "trade_count": 115708, "unique_traders": 4057, "label": "EU midday"},
+    {"hour_utc": 12, "volume_usd": 76884038, "trade_count": 132716, "unique_traders": 4538, "label": "EU PM / US pre"},
+    {"hour_utc": 13, "volume_usd": 95930434, "trade_count": 158002, "unique_traders": 4678, "label": "US pre-market"},
+    {"hour_utc": 14, "volume_usd": 219916869, "trade_count": 291298, "unique_traders": 5525, "label": "US open"},
+    {"hour_utc": 15, "volume_usd": 247407867, "trade_count": 332131, "unique_traders": 6144, "label": "US peak"},
+    {"hour_utc": 16, "volume_usd": 189895180, "trade_count": 298672, "unique_traders": 5430, "label": "US late AM"},
+    {"hour_utc": 17, "volume_usd": 163094174, "trade_count": 265767, "unique_traders": 5177, "label": "US midday"},
+    {"hour_utc": 18, "volume_usd": 156713790, "trade_count": 261531, "unique_traders": 5032, "label": "US PM"},
+    {"hour_utc": 19, "volume_usd": 127869679, "trade_count": 222095, "unique_traders": 4504, "label": "US mid-PM"},
+    {"hour_utc": 20, "volume_usd": 136213910, "trade_count": 212778, "unique_traders": 4256, "label": "US late PM"},
+    {"hour_utc": 21, "volume_usd": 105442237, "trade_count": 146963, "unique_traders": 4277, "label": "US evening"},
+    {"hour_utc": 22, "volume_usd": 51170009, "trade_count": 97836, "unique_traders": 3740, "label": "Global trough"},
+    {"hour_utc": 23, "volume_usd": 117438661, "trade_count": 171212, "unique_traders": 4011, "label": "Asia waking"}
+  ],
+  "timezone_30d": [
+    {"bucket": "Americas", "hours": "UTC 14-20", "wallet_count": 5228, "volume_usd": 4404055564, "pct_wallets": 39.4, "pct_volume": 82.2},
+    {"bucket": "Asia East", "hours": "UTC 0-6", "wallet_count": 3166, "volume_usd": 474876847, "pct_wallets": 23.9, "pct_volume": 8.9},
+    {"bucket": "Europe/Asia overlap", "hours": "UTC 7-13", "wallet_count": 3380, "volume_usd": 291294526, "pct_wallets": 25.5, "pct_volume": 5.4},
+    {"bucket": "Asia early", "hours": "UTC 21-23", "wallet_count": 1494, "volume_usd": 188558791, "pct_wallets": 11.3, "pct_volume": 3.5}
+  ],
+  "timezone_90d": [
+    {"bucket": "Americas", "hours": "UTC 14-20", "wallet_count": 13446, "volume_usd": 6938240202, "pct_wallets": 37.2, "pct_volume": 78.2},
+    {"bucket": "Asia East", "hours": "UTC 0-6", "wallet_count": 6723, "volume_usd": 705668012, "pct_wallets": 18.6, "pct_volume": 8.0},
+    {"bucket": "Europe/Asia overlap", "hours": "UTC 7-13", "wallet_count": 12807, "volume_usd": 832220591, "pct_wallets": 35.4, "pct_volume": 9.4},
+    {"bucket": "Asia early", "hours": "UTC 21-23", "wallet_count": 3211, "volume_usd": 386749767, "pct_wallets": 8.9, "pct_volume": 4.4}
+  ],
+  "monthly_growth": [
+    {"month": "Nov 2025", "volume_usd": 133695572, "trade_count": 375359, "unique_traders": 21898, "note": "partial (from 27th)"},
+    {"month": "Dec 2025", "volume_usd": 539444622, "trade_count": 1072164, "unique_traders": 18607, "note": ""},
+    {"month": "Jan 2026", "volume_usd": 1934004091, "trade_count": 2608442, "unique_traders": 22382, "note": ""},
+    {"month": "Feb 2026", "volume_usd": 1824295002, "trade_count": 3115908, "unique_traders": 16191, "note": "24 days"}
+  ],
+  "cex_attribution": [
+    {"cex": "Binance", "country": "Global/Asia", "hl_depositors": 423, "usdh_volume": 7340000},
+    {"cex": "Coinbase", "country": "US", "hl_depositors": 308, "usdh_volume": null},
+    {"cex": "Bitget", "country": "Global/Asia", "hl_depositors": 82, "usdh_volume": 771000},
+    {"cex": "Gate.io", "country": "Global/Asia", "hl_depositors": 58, "usdh_volume": null},
+    {"cex": "Bybit", "country": "Dubai/Asia", "hl_depositors": 47, "usdh_volume": 1010000},
+    {"cex": "HTX", "country": "Global/Asia", "hl_depositors": 12, "usdh_volume": 443000},
+    {"cex": "OKX", "country": "Global/Asia", "hl_depositors": 11, "usdh_volume": null},
+    {"cex": "Coinhako", "country": "Singapore", "hl_depositors": 6, "usdh_volume": 127000},
+    {"cex": "Bitkub", "country": "Thailand", "hl_depositors": 2, "usdh_volume": 6000},
+    {"cex": "Bitbank", "country": "Japan", "hl_depositors": 1, "usdh_volume": null},
+    {"cex": "Indodax", "country": "Indonesia", "hl_depositors": 1, "usdh_volume": null},
+    {"cex": "Korbit", "country": "Korea", "hl_depositors": 1, "usdh_volume": 18}
+  ],
+  "summary_stats": {
+    "total_volume_30d": 2880000000,
+    "total_volume_90d": 4430000000,
+    "hyperevm_dex_30d": 118000000,
+    "hyperevm_dex_90d": 211000000,
+    "total_deposits_90d": 9950000000,
+    "unique_depositors_90d": 21541,
+    "unique_traders_30d": 13268,
+    "unique_traders_90d": 36187,
+    "asian_wallets_30d": 4660,
+    "asian_wallets_90d": 9934,
+    "asian_volume_30d": 663500000,
+    "asian_volume_90d": 1092000000,
+    "asian_pct_wallets_30d": 35.1,
+    "asian_pct_volume_30d": 12.4,
+    "asian_pct_wallets_90d": 27.4,
+    "asian_pct_volume_90d": 12.3,
+    "cex_attributed_depositors": 1143,
+    "cex_attributed_pct": 9.3,
+    "revenue_yield_split_pct": 20
+  }
+}
