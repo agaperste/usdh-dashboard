@@ -13,42 +13,42 @@ export default function LoginPage() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#f5f5f5',
+      backgroundColor: '#0a0a0a',
       fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
     }}>
       <div style={{
-        backgroundColor: '#ffffff',
+        backgroundColor: '#111111',
         borderRadius: '12px',
-        border: '1px solid #e5e5e5',
+        border: '1px solid #2a2a2a',
         padding: '48px',
         maxWidth: '420px',
         width: '100%',
         textAlign: 'center',
-        boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+        boxShadow: '0 4px 24px rgba(0,0,0,0.3)',
       }}>
         <div style={{ marginBottom: '32px' }}>
           <h1 style={{
             fontSize: '1.5rem',
             fontWeight: 700,
-            color: '#1a1a1a',
+            color: '#e5e5e5',
             marginBottom: '8px',
           }}>
             USDH Dashboard
           </h1>
-          <p style={{ fontSize: '0.9rem', color: '#666', lineHeight: 1.5 }}>
+          <p style={{ fontSize: '0.9rem', color: '#a0a0a0', lineHeight: 1.5 }}>
             Sign in with your Bridge Google account to continue
           </p>
         </div>
 
         {error && (
           <div style={{
-            backgroundColor: '#fef2f2',
-            border: '1px solid #fecaca',
+            backgroundColor: '#2a1515',
+            border: '1px solid #7f1d1d',
             borderRadius: '8px',
             padding: '12px 16px',
             marginBottom: '24px',
             fontSize: '0.85rem',
-            color: '#991b1b',
+            color: '#fca5a5',
             lineHeight: 1.5,
           }}>
             {error === 'AccessDenied'
@@ -87,7 +87,7 @@ export default function LoginPage() {
           Sign in with Google
         </button>
 
-        <p style={{ fontSize: '0.75rem', color: '#999', marginTop: '24px' }}>
+        <p style={{ fontSize: '0.75rem', color: '#707070', marginTop: '24px' }}>
           Restricted to @bridge.xyz accounts
         </p>
       </div>

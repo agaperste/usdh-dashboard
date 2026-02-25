@@ -455,8 +455,8 @@ export default function Dashboard() {
       <nav style={{
         position: 'sticky',
         top: 0,
-        backgroundColor: '#ffffff',
-        borderBottom: '2px solid #e0e0e0',
+        backgroundColor: '#111111',
+        borderBottom: '2px solid #2a2a2a',
         padding: '1rem 0',
         zIndex: 1000,
         marginBottom: '2rem'
@@ -468,19 +468,19 @@ export default function Dashboard() {
           alignItems: 'center',
           flexWrap: 'wrap'
         }}>
-          <a href="#top-projects" style={{ fontSize: '0.9rem', color: '#666', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f3f4f6'; e.currentTarget.style.color = '#1a1a1a' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#666' }}>
+          <a href="#top-projects" style={{ fontSize: '0.9rem', color: '#a0a0a0', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#e5e5e5' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#a0a0a0' }}>
             📊 Top Projects
           </a>
-          <a href="#lending" style={{ fontSize: '0.9rem', color: '#666', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f3f4f6'; e.currentTarget.style.color = '#1a1a1a' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#666' }}>
+          <a href="#lending" style={{ fontSize: '0.9rem', color: '#a0a0a0', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#e5e5e5' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#a0a0a0' }}>
             💰 Lending
           </a>
-          <a href="#dex" style={{ fontSize: '0.9rem', color: '#666', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f3f4f6'; e.currentTarget.style.color = '#1a1a1a' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#666' }}>
+          <a href="#dex" style={{ fontSize: '0.9rem', color: '#a0a0a0', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#e5e5e5' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#a0a0a0' }}>
             🔄 Spot Trading
           </a>
-          <a href="#perpetuals" style={{ fontSize: '0.9rem', color: '#666', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f3f4f6'; e.currentTarget.style.color = '#1a1a1a' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#666' }}>
+          <a href="#perpetuals" style={{ fontSize: '0.9rem', color: '#a0a0a0', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#e5e5e5' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#a0a0a0' }}>
             📈 Perpetuals
           </a>
-          <a href="#users" style={{ fontSize: '0.9rem', color: '#666', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f3f4f6'; e.currentTarget.style.color = '#1a1a1a' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#666' }}>
+          <a href="#users" style={{ fontSize: '0.9rem', color: '#a0a0a0', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#e5e5e5' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#a0a0a0' }}>
             👥 Users
           </a>
           <span style={{ color: '#d0d0d0' }}>|</span>
@@ -499,8 +499,8 @@ export default function Dashboard() {
             </p>
           </div>
           <div style={{ textAlign: 'right', paddingTop: '0.5rem' }}>
-            <p style={{ fontSize: '0.85rem', color: '#666', margin: 0 }}>Powered by</p>
-            <p style={{ fontSize: '1.2rem', fontWeight: 600, color: '#1a1a1a', margin: 0 }}>Allium</p>
+            <p style={{ fontSize: '0.85rem', color: '#a0a0a0', margin: 0 }}>Powered by</p>
+            <p style={{ fontSize: '1.2rem', fontWeight: 600, color: '#e5e5e5', margin: 0 }}>Allium</p>
           </div>
         </div>
 
@@ -508,36 +508,36 @@ export default function Dashboard() {
         <div style={{
           marginTop: '2rem',
           padding: '1.5rem',
-          backgroundColor: '#f8fafc',
+          backgroundColor: '#1a1a1a',
           borderRadius: '8px',
-          border: '1px solid #e0e0e0'
+          border: '1px solid #2a2a2a'
         }}>
-          <h2 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: '#1a1a1a' }}>Dashboard Sections</h2>
-          <p style={{ fontSize: '1rem', color: '#666', marginBottom: '1rem' }}>
+          <h2 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: '#e5e5e5' }}>Dashboard Sections</h2>
+          <p style={{ fontSize: '1rem', color: '#a0a0a0', marginBottom: '1rem' }}>
             This dashboard provides comprehensive analytics on USDH stablecoin usage across multiple protocols and chains:
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.5rem' }}>
             <div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#10b981' }}>💰 Lending</h3>
-              <p style={{ fontSize: '0.9rem', color: '#666', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '0.9rem', color: '#a0a0a0', lineHeight: 1.6 }}>
                 Track USDH deposits and withdrawals across lending protocols on HyperEVM (Morpho Blue, HyperLend, Hypurrfi, Euler)
               </p>
             </div>
             <div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#3b82f6' }}>🔄 Spot Trading</h3>
-              <p style={{ fontSize: '0.9rem', color: '#666', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '0.9rem', color: '#a0a0a0', lineHeight: 1.6 }}>
                 Monitor USDH trading volume on HyperEVM DEXs by project and token pairs (WHYPE, USDC, thBILL, etc.)
               </p>
             </div>
             <div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#8b5cf6' }}>📈 Perpetuals</h3>
-              <p style={{ fontSize: '0.9rem', color: '#666', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '0.9rem', color: '#a0a0a0', lineHeight: 1.6 }}>
                 Analyze USDH perpetual trading on HyperCore (Hyperliquid) across protocols (Hyperliquid, Felix, Kinetiq, Ventuals) and assets (SILVER, GOLD, S&P 500, etc.)
               </p>
             </div>
           </div>
-          <div style={{ marginTop: '1rem', padding: '0.75rem', backgroundColor: '#ffffff', borderRadius: '6px', border: '1px solid #e0e0e0' }}>
-            <p style={{ fontSize: '0.85rem', color: '#666', margin: 0 }}>
+          <div style={{ marginTop: '1rem', padding: '0.75rem', backgroundColor: '#111111', borderRadius: '6px', border: '1px solid #2a2a2a' }}>
+            <p style={{ fontSize: '0.85rem', color: '#a0a0a0', margin: 0 }}>
               <strong>Additional Analytics:</strong> Top projects by TVL/volume, user activity breakdown, and daily active users trends
             </p>
           </div>
@@ -546,28 +546,28 @@ export default function Dashboard() {
         {/* Date Range Selector */}
         <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
           <div>
-            <label style={{ fontSize: '0.9rem', color: '#666', marginRight: '0.5rem' }}>Start Date:</label>
+            <label style={{ fontSize: '0.9rem', color: '#a0a0a0', marginRight: '0.5rem' }}>Start Date:</label>
             <input
               type="date"
               value={startDate}
               onChange={(e) => setStartDate(e.target.value)}
               style={{
                 padding: '8px 12px',
-                border: '1px solid #e0e0e0',
+                border: '1px solid #2a2a2a',
                 borderRadius: '4px',
                 fontSize: '0.9rem'
               }}
             />
           </div>
           <div>
-            <label style={{ fontSize: '0.9rem', color: '#666', marginRight: '0.5rem' }}>End Date:</label>
+            <label style={{ fontSize: '0.9rem', color: '#a0a0a0', marginRight: '0.5rem' }}>End Date:</label>
             <input
               type="date"
               value={endDate}
               onChange={(e) => setEndDate(e.target.value)}
               style={{
                 padding: '8px 12px',
-                border: '1px solid #e0e0e0',
+                border: '1px solid #2a2a2a',
                 borderRadius: '4px',
                 fontSize: '0.9rem'
               }}
@@ -577,14 +577,14 @@ export default function Dashboard() {
             marginLeft: 'auto',
             maxWidth: '450px',
             padding: '1rem 1.25rem',
-            backgroundColor: '#f8f5ff',
+            backgroundColor: '#1e1533',
             border: '2px solid #8b5cf6',
             borderRadius: '8px',
             boxShadow: '0 2px 8px rgba(139, 92, 246, 0.1)'
           }}>
             <p style={{
               fontSize: '0.95rem',
-              color: '#1a1a1a',
+              color: '#e5e5e5',
               margin: 0,
               lineHeight: 1.6,
               fontWeight: 500
@@ -622,25 +622,25 @@ export default function Dashboard() {
         <h2>Top Projects Driving USDH Usage</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2rem' }}>
           <div>
-            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#666' }}>HyperEVM Lending</h3>
-            <p style={{ fontSize: '0.85rem', color: '#999', marginBottom: '1rem' }}>By Current TVL</p>
+            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#a0a0a0' }}>HyperEVM Lending</h3>
+            <p style={{ fontSize: '0.85rem', color: '#707070', marginBottom: '1rem' }}>By Current TVL</p>
             <div style={{
               display: 'flex',
               justifyContent: 'space-between',
               padding: '8px 0',
-              borderBottom: '1px solid #e0e0e0'
+              borderBottom: '1px solid #2a2a2a'
             }}>
               <span style={{ fontWeight: 500 }}>1. Morpho Blue</span>
-              <span style={{ color: '#666' }}>$22.5M</span>
+              <span style={{ color: '#a0a0a0' }}>$22.5M</span>
             </div>
             <div style={{
               display: 'flex',
               justifyContent: 'space-between',
               padding: '8px 0',
-              borderBottom: '1px solid #e0e0e0'
+              borderBottom: '1px solid #2a2a2a'
             }}>
               <span style={{ fontWeight: 500 }}>2. HyperLend</span>
-              <span style={{ color: '#666' }}>$8.1M</span>
+              <span style={{ color: '#a0a0a0' }}>$8.1M</span>
             </div>
             <div style={{
               display: 'flex',
@@ -648,29 +648,29 @@ export default function Dashboard() {
               padding: '8px 0'
             }}>
               <span style={{ fontWeight: 500 }}>3. Hypurrfi</span>
-              <span style={{ color: '#666' }}>$0.5M</span>
+              <span style={{ color: '#a0a0a0' }}>$0.5M</span>
             </div>
           </div>
           <div>
-            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#666' }}>HyperEVM DEX</h3>
-            <p style={{ fontSize: '0.85rem', color: '#999', marginBottom: '1rem' }}>By L7D Trading Volume</p>
+            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#a0a0a0' }}>HyperEVM DEX</h3>
+            <p style={{ fontSize: '0.85rem', color: '#707070', marginBottom: '1rem' }}>By L7D Trading Volume</p>
             <div style={{
               display: 'flex',
               justifyContent: 'space-between',
               padding: '8px 0',
-              borderBottom: '1px solid #e0e0e0'
+              borderBottom: '1px solid #2a2a2a'
             }}>
               <span style={{ fontWeight: 500 }}>1. Project X</span>
-              <span style={{ color: '#666' }}>$43.9M</span>
+              <span style={{ color: '#a0a0a0' }}>$43.9M</span>
             </div>
             <div style={{
               display: 'flex',
               justifyContent: 'space-between',
               padding: '8px 0',
-              borderBottom: '1px solid #e0e0e0'
+              borderBottom: '1px solid #2a2a2a'
             }}>
               <span style={{ fontWeight: 500 }}>2. Hybra Finance</span>
-              <span style={{ color: '#666' }}>$69K</span>
+              <span style={{ color: '#a0a0a0' }}>$69K</span>
             </div>
             <div style={{
               display: 'flex',
@@ -678,29 +678,29 @@ export default function Dashboard() {
               padding: '8px 0'
             }}>
               <span style={{ fontWeight: 500 }}>3. HyperSwap</span>
-              <span style={{ color: '#666' }}>$78</span>
+              <span style={{ color: '#a0a0a0' }}>$78</span>
             </div>
           </div>
           <div>
-            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#666' }}>HyperCore Perps</h3>
-            <p style={{ fontSize: '0.85rem', color: '#999', marginBottom: '1rem' }}>By L7D Trading Volume</p>
+            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#a0a0a0' }}>HyperCore Perps</h3>
+            <p style={{ fontSize: '0.85rem', color: '#707070', marginBottom: '1rem' }}>By L7D Trading Volume</p>
             <div style={{
               display: 'flex',
               justifyContent: 'space-between',
               padding: '8px 0',
-              borderBottom: '1px solid #e0e0e0'
+              borderBottom: '1px solid #2a2a2a'
             }}>
               <span style={{ fontWeight: 500 }}>1. Felix Exchange</span>
-              <span style={{ color: '#666' }}>$493.6M</span>
+              <span style={{ color: '#a0a0a0' }}>$493.6M</span>
             </div>
             <div style={{
               display: 'flex',
               justifyContent: 'space-between',
               padding: '8px 0',
-              borderBottom: '1px solid #e0e0e0'
+              borderBottom: '1px solid #2a2a2a'
             }}>
               <span style={{ fontWeight: 500 }}>2. Markets by Kinetiq</span>
-              <span style={{ color: '#666' }}>$398.2M</span>
+              <span style={{ color: '#a0a0a0' }}>$398.2M</span>
             </div>
             <div style={{
               display: 'flex',
@@ -708,20 +708,20 @@ export default function Dashboard() {
               padding: '8px 0'
             }}>
               <span style={{ fontWeight: 500 }}>3. Hyperliquid</span>
-              <span style={{ color: '#666' }}>$146.4M</span>
+              <span style={{ color: '#a0a0a0' }}>$146.4M</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Section Break */}
-      <div style={{ borderTop: '3px solid #e0e0e0', margin: '3rem 0' }} />
+      <div style={{ borderTop: '3px solid #2a2a2a', margin: '3rem 0' }} />
 
       {/* ============================================ */}
       {/* LENDING SECTION */}
       {/* ============================================ */}
       <div id="lending" style={{ marginBottom: '3rem' }}>
-        <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '2rem', color: '#1a1a1a' }}>
+        <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '2rem', color: '#e5e5e5' }}>
           HyperEVM Lending
         </h1>
 
@@ -776,7 +776,7 @@ export default function Dashboard() {
                     <Line type="monotone" dataKey="hyperlend_tvl" stroke="#4cd1a5" strokeWidth={2} name="HyperLend" dot={false} />
                     <Line type="monotone" dataKey="hypurrfi_tvl" stroke="#3b82f6" strokeWidth={2} name="Hypurrfi" dot={false} />
                     <Line type="monotone" dataKey="euler_tvl" stroke="#10b981" strokeWidth={2} name="Euler" dot={false} />
-                    <Line type="monotone" dataKey="total_tvl" stroke="#1C241C" strokeWidth={4} name="Total TVL" dot={false} strokeDasharray="5 5" />
+                    <Line type="monotone" dataKey="total_tvl" stroke="#a0a0a0" strokeWidth={4} name="Total TVL" dot={false} strokeDasharray="5 5" />
                   </ComposedChart>
                 </ResponsiveContainer>
               ) : (
@@ -788,13 +788,13 @@ export default function Dashboard() {
       </div>
 
       {/* Section Break */}
-      <div style={{ borderTop: '3px solid #e0e0e0', margin: '3rem 0' }} />
+      <div style={{ borderTop: '3px solid #2a2a2a', margin: '3rem 0' }} />
 
       {/* ============================================ */}
       {/* DEX SECTION */}
       {/* ============================================ */}
       <div id="dex" style={{ marginBottom: '3rem' }}>
-        <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '2rem', color: '#1a1a1a' }}>
+        <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '2rem', color: '#e5e5e5' }}>
           HyperEVM DEX
         </h1>
 
@@ -854,10 +854,10 @@ export default function Dashboard() {
       {/* HYPERLIQUID SPOT SECTION */}
       {/* ============================================ */}
       <div id="hyperliquid-spot" style={{ marginBottom: '3rem' }}>
-        <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '2rem', color: '#1a1a1a' }}>
+        <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '2rem', color: '#e5e5e5' }}>
           Hyperliquid Spot Trading
         </h1>
-        <p style={{ fontSize: '1rem', color: '#666', marginBottom: '2rem' }}>
+        <p style={{ fontSize: '1rem', color: '#a0a0a0', marginBottom: '2rem' }}>
           USDH spot trading pairs on Hyperliquid's native DEX
         </p>
 
@@ -886,13 +886,13 @@ export default function Dashboard() {
       </div>
 
       {/* Section Break */}
-      <div style={{ borderTop: '3px solid #e0e0e0', margin: '3rem 0' }} />
+      <div style={{ borderTop: '3px solid #2a2a2a', margin: '3rem 0' }} />
 
       {/* ============================================ */}
       {/* HYPERCORE PERPETUALS SECTION */}
       {/* ============================================ */}
       <div id="perpetuals" style={{ marginBottom: '3rem' }}>
-        <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '2rem', color: '#1a1a1a' }}>
+        <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '2rem', color: '#e5e5e5' }}>
           HyperCore (Hyperliquid) Perpetuals
         </h1>
 
@@ -952,7 +952,7 @@ export default function Dashboard() {
         {/* Perps Chart 3: Asset + Protocol Breakdown (Full Width) */}
         <div className="section" style={{ marginTop: '2rem' }}>
           <h2>Daily Trading Volume by Asset + Protocol</h2>
-          <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1rem' }}>
+          <p style={{ fontSize: '0.9rem', color: '#a0a0a0', marginBottom: '1rem' }}>
             Shows which protocols trade which assets (e.g., Felix vs Kinetiq for SILVER, US500, GOLD)
           </p>
           <div className="chart-container">
@@ -986,16 +986,16 @@ export default function Dashboard() {
       </div>
 
       {/* Section Break */}
-      <div style={{ borderTop: '3px solid #e0e0e0', margin: '3rem 0' }} />
+      <div style={{ borderTop: '3px solid #2a2a2a', margin: '3rem 0' }} />
 
       {/* ============================================ */}
       {/* USER ANALYTICS SECTION */}
       {/* ============================================ */}
       <div id="users" style={{ marginBottom: '3rem' }}>
-        <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '1rem', color: '#1a1a1a' }}>
+        <h1 style={{ fontSize: '1.8rem', fontWeight: 600, marginBottom: '1rem', color: '#e5e5e5' }}>
           Active Users Analytics
         </h1>
-        <p style={{ fontSize: '1rem', color: '#666', marginBottom: '2rem' }}>
+        <p style={{ fontSize: '1rem', color: '#a0a0a0', marginBottom: '2rem' }}>
           Distinct wallet addresses across lending, spot trading, and perpetual trading activities
         </p>
 
@@ -1004,51 +1004,51 @@ export default function Dashboard() {
             {/* Total Users Card */}
             <div style={{
               padding: '2rem',
-              backgroundColor: '#f8fafc',
+              backgroundColor: '#1a1a1a',
               borderRadius: '8px',
-              border: '2px solid #e0e0e0'
+              border: '2px solid #2a2a2a'
             }}>
-              <h2 style={{ fontSize: '1.3rem', marginBottom: '0.5rem', color: '#1a1a1a' }}>Total Unique Users</h2>
+              <h2 style={{ fontSize: '1.3rem', marginBottom: '0.5rem', color: '#e5e5e5' }}>Total Unique Users</h2>
               <p style={{ fontSize: '3rem', fontWeight: 700, color: '#8b5cf6', margin: '1rem 0' }}>43,808</p>
-              <p style={{ fontSize: '0.9rem', color: '#666' }}>Distinct wallet addresses participating in USDH activities</p>
+              <p style={{ fontSize: '0.9rem', color: '#a0a0a0' }}>Distinct wallet addresses participating in USDH activities</p>
             </div>
 
             {/* Breakdown by Category */}
             <div style={{
               padding: '2rem',
-              backgroundColor: '#ffffff',
+              backgroundColor: '#111111',
               borderRadius: '8px',
-              border: '1px solid #e0e0e0'
+              border: '1px solid #2a2a2a'
             }}>
-              <h2 style={{ fontSize: '1.2rem', marginBottom: '1.5rem', color: '#1a1a1a' }}>User Activity Breakdown</h2>
+              <h2 style={{ fontSize: '1.2rem', marginBottom: '1.5rem', color: '#e5e5e5' }}>User Activity Breakdown</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #f0f0f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2a2a2a' }}>
                   <span style={{ fontWeight: 500 }}>Perp Only</span>
-                  <span style={{ color: '#666', fontWeight: 600 }}>28,474</span>
+                  <span style={{ color: '#a0a0a0', fontWeight: 600 }}>28,474</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #f0f0f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2a2a2a' }}>
                   <span style={{ fontWeight: 500 }}>Spot Only</span>
-                  <span style={{ color: '#666', fontWeight: 600 }}>9,417</span>
+                  <span style={{ color: '#a0a0a0', fontWeight: 600 }}>9,417</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #f0f0f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2a2a2a' }}>
                   <span style={{ fontWeight: 500 }}>Spot + Perp</span>
-                  <span style={{ color: '#666', fontWeight: 600 }}>4,700</span>
+                  <span style={{ color: '#a0a0a0', fontWeight: 600 }}>4,700</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #f0f0f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2a2a2a' }}>
                   <span style={{ fontWeight: 500 }}>All Three</span>
-                  <span style={{ color: '#666', fontWeight: 600 }}>553</span>
+                  <span style={{ color: '#a0a0a0', fontWeight: 600 }}>553</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #f0f0f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2a2a2a' }}>
                   <span style={{ fontWeight: 500 }}>Lending + Perp</span>
-                  <span style={{ color: '#666', fontWeight: 600 }}>308</span>
+                  <span style={{ color: '#a0a0a0', fontWeight: 600 }}>308</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #f0f0f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2a2a2a' }}>
                   <span style={{ fontWeight: 500 }}>Lending + Spot</span>
-                  <span style={{ color: '#666', fontWeight: 600 }}>262</span>
+                  <span style={{ color: '#a0a0a0', fontWeight: 600 }}>262</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0' }}>
                   <span style={{ fontWeight: 500 }}>Lending Only</span>
-                  <span style={{ color: '#666', fontWeight: 600 }}>94</span>
+                  <span style={{ color: '#a0a0a0', fontWeight: 600 }}>94</span>
                 </div>
               </div>
             </div>
@@ -1057,7 +1057,7 @@ export default function Dashboard() {
           {/* Daily Active Users Time Series Chart */}
           <div style={{ marginTop: '2rem' }}>
             <h2 style={{ marginBottom: '1rem' }}>Daily Active Users Over Time</h2>
-            <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1rem' }}>
+            <p style={{ fontSize: '0.9rem', color: '#a0a0a0', marginBottom: '1rem' }}>
               Total unique users line shows true distinct wallet addresses (deduplicated across all three categories)
             </p>
             <div className="chart-container">
@@ -1072,7 +1072,7 @@ export default function Dashboard() {
                     <Line type="monotone" dataKey="lending_users" stroke="#8b5cf6" name="Lending Users" strokeWidth={2} dot={false} />
                     <Line type="monotone" dataKey="spot_users" stroke="#3b82f6" name="Spot Trading Users" strokeWidth={2} dot={false} />
                     <Line type="monotone" dataKey="perp_users" stroke="#4cd1a5" name="Perp Trading Users" strokeWidth={2} dot={false} />
-                    <Line type="monotone" dataKey="total_unique_users" stroke="#1C241C" name="Total Unique Users (Deduplicated)" strokeWidth={3} dot={false} strokeDasharray="5 5" />
+                    <Line type="monotone" dataKey="total_unique_users" stroke="#a0a0a0" name="Total Unique Users (Deduplicated)" strokeWidth={3} dot={false} strokeDasharray="5 5" />
                   </LineChart>
                 </ResponsiveContainer>
               ) : (
@@ -1081,8 +1081,8 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div style={{ marginTop: '1.5rem', padding: '1rem', backgroundColor: '#fffbeb', borderRadius: '8px', border: '1px solid #fbbf24' }}>
-            <p style={{ fontSize: '0.9rem', color: '#92400e', margin: 0 }}>
+          <div style={{ marginTop: '1.5rem', padding: '1rem', backgroundColor: '#291c04', borderRadius: '8px', border: '1px solid #fbbf24' }}>
+            <p style={{ fontSize: '0.9rem', color: '#fbbf24', margin: 0 }}>
               <strong>Note:</strong> Hyperliquid (HyperCore) addresses may differ from EVM addresses, potentially leading to a slight overcount for users active on both chains.
             </p>
           </div>
